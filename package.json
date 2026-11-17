@@ -10,7 +10,8 @@
     "lint": "eslint .",
     "typecheck": "tsc -b",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "test": "node tests/studio.test.mjs"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "1.1.15",

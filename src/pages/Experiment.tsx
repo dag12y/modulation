@@ -1,291 +1,353 @@
 import { useState } from 'react';
-import {
-  Activity,
-  ArrowRight,
-  BookOpen,
-  ChartNoAxesCombined,
-  CircleHelp,
-  Lightbulb,
-  Radio,
-  Waves,
-} from 'lucide-react';
+import { ArrowRight, BookOpen, Maximize2, Radio, ScanLine } from 'lucide-react';
 import type { ExperimentData } from '@/data/experiments';
-import { ExperimentHeader } from '@/components/simulation/ExperimentHeader';
+import { experiments } from '@/data/experiments';
 import { SignalControls } from '@/components/simulation/SignalControls';
-import { MetricsPanel } from '@/components/simulation/MetricsPanel';
-import { WaveformChart } from '@/components/charts/WaveformChart';
+import { WavePlot } from '@/components/charts/WaveformChart';
 import { SpectrumChart } from '@/components/charts/SpectrumChart';
 import { signalKeys } from '@/data/mockSignals';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Dialog } from '@/components/ui/dialog';
 import { ExperimentTheory } from './Theory';
 import { DemodulationContent } from './Demodulation';
 import { Equation } from '@/components/Equation';
 import { Link } from '@/app/router';
-function FrequencyAnalysis({
-  experiment: e,
-  sideband,
-}: {
-  experiment: ExperimentData;
-  sideband: string;
-}) {
-  return (
-    <div className="frequency-layout">
-      <section className="card">
-        <div className="card-heading">
-          <div>
-            <h2>Frequency-domain perspective</h2>
-            <p>Positive-frequency illustration · fixed example data</p>
-          </div>
-          <span className="badge neutral">MAGNITUDE SPECTRUM</span>
-        </div>
-        <SpectrumChart id={e.id} sideband={sideband} />
-        <div className="educational-note">
-          <CircleHelp size={17} />
-          <span>
-            For a real signal, negative-frequency components mirror the
-            positive-frequency spectrum. Only the positive side is shown here.
-          </span>
-        </div>
-      </section>
-      <section className="card">
-        <h2>Reading the spectrum</h2>
-        <div className="reading-list">
-          <div>
-            <span>01</span>
-            <div>
-              <h3>Locate the carrier reference</h3>
-              <p>
-                f꜀ = 10 kHz marks the center frequency, even when the carrier is
-                suppressed.
-              </p>
-            </div>
-          </div>
-          <div>
-            <span>02</span>
-            <div>
-              <h3>Identify the information</h3>
-              <p>
-                Sidebands occur around f꜀ ± fₘ. This example uses a 1 kHz
-                message.
-              </p>
-            </div>
-          </div>
-          <div>
-            <span>03</span>
-            <div>
-              <h3>Consider the bandwidth</h3>
-              <p>
-                {e.bandwidth} is the illustrative occupied bandwidth. A single
-                tone is shown to make the components clear.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-  );
-}
+const channels = [
+  {
+    key: 'message',
+    label: 'Message',
+    symbol: 'm(t)',
+    color: '#38bdf8',
+    description:
+      'The information to transmit. A low-frequency signal at 1 kHz.',
+  },
+  {
+    key: 'carrier',
+    label: 'Carrier',
+    symbol: 'c(t)',
+    color: '#a78bfa',
+    description:
+      'The 10 kHz reference that shifts information into a higher frequency band.',
+  },
+  {
+    key: 'modulated',
+    label: 'Modulated',
+    symbol: 's(t)',
+    color: '#a3e635',
+    description:
+      'The transmitted waveform. Its structure depends on the selected technique.',
+  },
+] as const;
 export function Experiment({ experiment: e }: { experiment: ExperimentData }) {
   const [mode, setMode] = useState('Stacked');
   const [sideband, setSideband] = useState('USB');
-  return (
-    <div className="experiment-page page-enter">
-      <ExperimentHeader experiment={e} />
-      <Tabs defaultValue="simulation">
-        <TabsList>
-          {[
-            { value: 'simulation', label: 'Simulation', icon: Activity },
-            { value: 'theory', label: 'Theory & Equations', icon: BookOpen },
-            {
-              value: 'frequency',
-              label: 'Frequency Analysis',
-              icon: ChartNoAxesCombined,
-            },
-            { value: 'demodulation', label: 'Demodulation', icon: Waves },
-          ].map((t) => (
-            <TabsTrigger key={t.value} value={t.value}>
-              <t.icon size={15} />
-              {t.label}
-              {t.value === 'simulation' && (
-                <span className="tab-preview">PREVIEW</span>
-              )}
-            </TabsTrigger>
-          ))}
-        </TabsList>
-        <TabsContent value="simulation">
-          <div className="workspace-caption">
-            <span>
-              <span className="live-dot" /> SIGNAL WORKSPACE
-            </span>
-            <span>Illustrative data · controls do not affect charts</span>
-          </div>
-          <MetricsPanel experiment={e} />
-          <div className="simulation-grid">
-            <section className="card time-card">
-              <div className="card-heading">
-                <div>
-                  <h2>
-                    <Activity size={17} /> Time-Domain Signals
-                  </h2>
-                  <p>Three perspectives on the same transmission.</p>
+  const [expanded, setExpanded] = useState(false);
+  const [visible, setVisible] = useState({
+    message: true,
+    carrier: true,
+    modulated: true,
+  });
+  const hasVisibleSignals = Object.values(visible).some(Boolean);
+  const traces = (
+    <>
+      {!hasVisibleSignals ? (
+        <div className="scope-empty">
+          Select a signal above to inspect its waveform.
+        </div>
+      ) : mode === 'Overlay' ? (
+        <WavePlot
+          signal={signalKeys[e.id]}
+          color="#a3e635"
+          overlay
+          tall
+          visible={visible}
+        />
+      ) : (
+        channels.map(
+          (c) =>
+            visible[c.key] && (
+              <div className="scope-channel" key={c.key}>
+                <div className="scope-channel-label" style={{ color: c.color }}>
+                  <span>{c.symbol}</span>
+                  <small>{c.label}</small>
+                  <span>
+                    {c.key === 'message'
+                      ? '1 kHz'
+                      : c.key === 'carrier'
+                        ? '10 kHz'
+                        : e.name}
+                  </span>
                 </div>
-                <div className="segmented">
-                  {['Stacked', 'Overlay'].map((m) => (
+                <WavePlot
+                  signal={c.key === 'modulated' ? signalKeys[e.id] : c.key}
+                  color={c.color}
+                />
+              </div>
+            ),
+        )
+      )}
+    </>
+  );
+  return (
+    <div className="hybrid-experiment page-enter">
+      <div className="studio-page-title">
+        <div>
+          <span className="eyebrow">THE EXPERIMENT BENCH / {e.number}</span>
+          <h1>
+            {e.fullName}
+            <span className="title-period">.</span>
+          </h1>
+          <p>{e.description}</p>
+        </div>
+        <span className="page-index">
+          {e.number}
+          <small> / 04</small>
+        </span>
+      </div>
+      <nav
+        className="experiment-switcher"
+        aria-label="Choose modulation experiment"
+      >
+        {experiments.map((item) => (
+          <Link
+            key={item.id}
+            to={`/experiments/${item.id}`}
+            aria-current={e.id === item.id ? 'page' : undefined}
+            className={e.id === item.id ? 'active' : ''}
+          >
+            <span>{item.number}</span>
+            {item.name}
+            <small>
+              {item.id === 'dsb-fc'
+                ? 'Full carrier'
+                : item.id === 'dsb-sc'
+                  ? 'Suppressed carrier'
+                  : item.id === 'ssb-sc'
+                    ? 'Single sideband'
+                    : 'Vestigial sideband'}
+            </small>
+          </Link>
+        ))}
+      </nav>
+      <Tabs defaultValue="instrument">
+        <TabsList>
+          <TabsTrigger value="instrument">Instrument workspace</TabsTrigger>
+          <TabsTrigger value="theory">Theory & equations</TabsTrigger>
+          <TabsTrigger value="receiver">Receiver view</TabsTrigger>
+        </TabsList>
+        <TabsContent value="instrument">
+          <section
+            className="instrument-surface instrument-bench"
+            aria-label={`${e.name} static instrument workspace`}
+          >
+            <div className="bench-topline">
+              <span>
+                <ScanLine size={15} /> SIGNAL ANALYSIS <b>/</b> {e.name}
+              </span>
+              <span className="fixed-status">
+                <i /> FIXED REFERENCE DATA
+              </span>
+            </div>
+            <div className="analyzer-grid">
+              <section className="oscilloscope">
+                <div className="scope-toolbar">
+                  <div>
+                    <span className="instrument-kicker">TIME DOMAIN</span>
+                    <h2>Oscilloscope</h2>
+                  </div>
+                  <div className="scope-actions">
+                    <div className="segmented">
+                      {['Stacked', 'Overlay'].map((m) => (
+                        <button
+                          key={m}
+                          aria-pressed={mode === m}
+                          onClick={() => setMode(m)}
+                          className={mode === m ? 'selected' : ''}
+                        >
+                          {m}
+                        </button>
+                      ))}
+                    </div>
                     <button
-                      key={m}
-                      className={mode === m ? 'selected' : ''}
-                      aria-pressed={mode === m}
-                      onClick={() => setMode(m)}
+                      className="expand-scope"
+                      onClick={() => setExpanded(true)}
+                      aria-label="Expand oscilloscope"
                     >
-                      {m}
+                      <Maximize2 size={16} />
+                    </button>
+                  </div>
+                </div>
+                <div className="scope-legend">
+                  {channels.map((c) => (
+                    <button
+                      key={c.key}
+                      aria-pressed={visible[c.key]}
+                      onClick={() =>
+                        setVisible((v) => ({ ...v, [c.key]: !v[c.key] }))
+                      }
+                      style={{ color: visible[c.key] ? c.color : '#91a0b8' }}
+                    >
+                      <i
+                        style={{
+                          background: visible[c.key] ? c.color : 'transparent',
+                          borderColor: c.color,
+                        }}
+                      />
+                      {c.label} <span>{c.symbol}</span>
                     </button>
                   ))}
+                  <span>Amplitude / V</span>
                 </div>
-              </div>
-              {mode === 'Stacked' ? (
-                <>
-                  <WaveformChart
-                    label="Message Signal"
-                    symbol="m(t)"
-                    signal="message"
-                    color="#5577e9"
-                  />
-                  <WaveformChart
-                    label="Carrier Signal"
-                    symbol="c(t)"
-                    signal="carrier"
-                    color="#3aabb8"
-                  />
-                  <WaveformChart
-                    label="Modulated Signal"
-                    symbol="s(t)"
-                    signal={signalKeys[e.id]}
-                    color="#9174cc"
-                  />
-                </>
-              ) : (
-                <>
-                  <div className="overlay-legend">
-                    <span className="blue-dot" /> Message{' '}
-                    <span className="cyan-dot" /> Carrier{' '}
-                    <span className="violet-dot" /> Modulated
-                  </div>
-                  <WaveformChart
-                    label="Overlaid Signals"
-                    symbol="m(t), c(t), s(t)"
-                    signal={signalKeys[e.id]}
-                    color="#9174cc"
-                    overlay
-                  />
-                </>
-              )}
-              <div className="chart-footnote">
-                <span>Time (ms)</span>
-                <span>FIXED SAMPLE · 4 ms WINDOW</span>
-              </div>
-            </section>
-            <div className="spectrum-column">
-              <section className="card spectrum-card">
-                <div className="card-heading">
-                  <div>
-                    <h2>
-                      <ChartNoAxesCombined size={17} /> Frequency Spectrum
-                    </h2>
-                    <p>Magnitude response · |S(f)|</p>
-                  </div>
-                  <span className="badge neutral">STATIC</span>
+                <div
+                  className={`scope-traces ${mode === 'Overlay' ? 'overlay-traces' : ''}`}
+                >
+                  {traces}
                 </div>
-                {e.id === 'ssb-sc' && (
-                  <div className="segmented spectrum-selector">
-                    {['USB', 'LSB'].map((s) => (
-                      <button
-                        key={s}
-                        className={sideband === s ? 'selected' : ''}
-                        aria-pressed={sideband === s}
-                        onClick={() => setSideband(s)}
-                      >
-                        {s}
-                      </button>
-                    ))}
-                  </div>
-                )}
-                <SpectrumChart id={e.id} sideband={sideband} />
-                <div className="spectrum-key">
+                <div className="scope-bottomline">
                   <span>
-                    <i /> Sideband
+                    HORIZONTAL <strong>1 ms / div</strong>
+                  </span>
+                  <span>
+                    Time / ms <b>→</b>
+                  </span>
+                  <span>
+                    WINDOW <strong>4 ms</strong>
+                  </span>
+                </div>
+              </section>
+              <section className="frequency-analyzer">
+                <div className="scope-toolbar">
+                  <div>
+                    <span className="instrument-kicker">FREQUENCY DOMAIN</span>
+                    <h2>Spectrum analyzer</h2>
+                  </div>
+                  <Radio size={18} />
+                </div>
+                <div className="spectrum-axis-caption">
+                  <span>Relative magnitude</span>
+                  <span>|S(f)|</span>
+                </div>
+                <SpectrumChart id={e.id} sideband={sideband} />
+                <div className="spectral-legend">
+                  <span>
+                    <i className="sideband-swatch" />
+                    Sideband
                   </span>
                   {e.id === 'dsb-fc' && (
                     <span>
-                      <i className="lime-key" /> Carrier
+                      <i className="carrier-swatch" />
+                      Carrier
                     </span>
                   )}
-                  <span>Relative magnitude</span>
                 </div>
-              </section>
-              <section className="card quick-equation">
-                <span className="eyebrow">
-                  <BookOpen size={13} /> SIGNAL EQUATION
-                </span>
-                <Equation math={e.equations[0]} block />
-                <p>
+                <div className="bandwidth-readout">
+                  <span>
+                    OCCUPIED BANDWIDTH<strong>{e.bandwidth}</strong>
+                  </span>
+                  <span className="bandwidth-glyph" aria-hidden="true">
+                    ↔
+                  </span>
+                </div>
+                <p className="spectrum-description">
                   {e.id === 'dsb-fc'
-                    ? 'The message varies the amplitude of the carrier. The envelope traces the information.'
-                    : e.insights[0]}
+                    ? 'Carrier at 10 kHz. Equal sidebands at 9 and 11 kHz.'
+                    : e.id === 'dsb-sc'
+                      ? 'Two equal sidebands. No transmitted carrier component.'
+                      : e.id === 'ssb-sc'
+                        ? `${sideband} illustration selected. One sideband carries the information.`
+                        : 'Broadband schematic: one full sideband and a 0.25 kHz vestige. Suppressed carrier.'}
                 </p>
-                <Link to="/theory" className="text-link">
-                  Explore the mathematics <ArrowRight size={13} />
-                </Link>
+                <p className="spectrum-disclaimer">
+                  Positive-frequency illustration · no FFT
+                </p>
               </section>
-              <div className="spectrum-insight">
-                <Radio size={18} />
-                <p>
-                  {e.id === 'dsb-fc' ? (
-                    <>
-                      The carrier sits at <strong>10 kHz</strong>, with
-                      sidebands at <strong>9 kHz</strong> and{' '}
-                      <strong>11 kHz</strong>.
-                    </>
-                  ) : (
-                    <>
-                      Carrier reference: <strong>10 kHz</strong>.{' '}
-                      {e.insights[1]}
-                    </>
-                  )}
-                </p>
-              </div>
             </div>
             <SignalControls
-              key={e.id}
               experiment={e}
               sideband={sideband}
               onSideband={setSideband}
             />
-          </div>
+            <div className="bench-footer">
+              <span>AM STUDIO / INSTRUMENT 0{Number(e.number)}</span>
+              <span>Static teaching illustrations · no simulation running</span>
+            </div>
+          </section>
+          <section className="learning-strip">
+            <div className="learning-model">
+              <span className="eyebrow">
+                <BookOpen size={13} /> THE MATHEMATICAL MODEL
+              </span>
+              <Equation
+                math={
+                  e.equations[e.id === 'ssb-sc' && sideband === 'LSB' ? 1 : 0]
+                }
+                block
+              />
+              <p>
+                {e.id === 'vsb'
+                  ? 'An asymmetric filter retains one sideband and a vestige of the other.'
+                  : 'An ideal single-tone model. The plots use bundled reference data.'}
+              </p>
+              <Link className="text-link" to="/theory">
+                Unpack the equation <ArrowRight size={13} />
+              </Link>
+            </div>
+            <div className="learning-insight">
+              <span className="eyebrow">THE KEY INSIGHT</span>
+              <h2>
+                {e.id === 'dsb-fc'
+                  ? 'The envelope tells the story.'
+                  : e.id === 'dsb-sc'
+                    ? 'More information per watt.'
+                    : e.id === 'ssb-sc'
+                      ? 'Half the spectrum. The same message.'
+                      : 'A practical middle ground.'}
+              </h2>
+              <p>{e.efficiency}</p>
+              <dl>
+                {[
+                  ['Carrier', e.carrier],
+                  ['Sidebands', e.id === 'ssb-sc' ? sideband : e.sidebands],
+                  ['Bandwidth', e.bandwidth],
+                  ['Recovery', e.method],
+                ].map(([k, v]) => (
+                  <div key={k}>
+                    <dt>{k}</dt>
+                    <dd>{v}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </section>
+          <section
+            className="signal-explanations"
+            aria-label="Understand the three signals"
+          >
+            {channels.map((c) => (
+              <div key={c.key}>
+                <span style={{ color: c.color }}>{c.symbol}</span>
+                <h3>{c.label} signal</h3>
+                <p>{c.description}</p>
+              </div>
+            ))}
+          </section>
         </TabsContent>
         <TabsContent value="theory">
           <ExperimentTheory experiment={e} />
         </TabsContent>
-        <TabsContent value="frequency">
-          <FrequencyAnalysis experiment={e} sideband={sideband} />
-        </TabsContent>
-        <TabsContent value="demodulation">
+        <TabsContent value="receiver">
           <DemodulationContent experiment={e} />
         </TabsContent>
       </Tabs>
-      <section className="insights-panel">
-        <div>
-          <span className="insight-icon">
-            <Lightbulb size={19} />
-          </span>
-          <h3>A few things to take away</h3>
-          <span className="badge neutral">{e.name}</span>
-        </div>
-        <ul>
-          {e.insights.map((s) => (
-            <li key={s}>{s}</li>
-          ))}
-        </ul>
-      </section>
+      <Dialog
+        open={expanded}
+        onOpenChange={setExpanded}
+        title={`${e.name} / Oscilloscope`}
+        description="Fixed reference traces · Amplitude (V) over Time (ms)"
+        className="scope-dialog instrument-surface"
+      >
+        <div className="expanded-traces">{traces}</div>
+      </Dialog>
     </div>
   );
 }

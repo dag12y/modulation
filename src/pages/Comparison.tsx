@@ -4,7 +4,7 @@ import { SpectrumChart } from '@/components/charts/SpectrumChart';
 import { Link } from '@/app/router';
 export function Comparison() {
   return (
-    <div className="page-enter">
+    <div className="page-enter comparison-workspace">
       <div className="page-heading">
         <div className="eyebrow">
           <ChartNoAxesCombined size={14} /> SIDE BY SIDE
@@ -14,6 +14,44 @@ export function Comparison() {
           Compare how four modulation techniques trade bandwidth, power, and
           receiver complexity.
         </p>
+      </div>
+      <div className="section-heading library-heading">
+        <div>
+          <span className="eyebrow">A VISUAL COMPARISON</span>
+          <h2>Where the information lives</h2>
+          <p>
+            Fixed spectra with the same 10 kHz carrier reference. SSB shows USB.
+          </p>
+        </div>
+      </div>
+      <div className="spectrum-comparison">
+        {experiments.map((e) => (
+          <section
+            className="card comparison-instrument instrument-surface"
+            key={e.id}
+          >
+            <div className="spectrum-mini-heading">
+              <span className="eyebrow">EXPERIMENT {e.number}</span>
+              <Link to={`/experiments/${e.id}`} aria-label={`Open ${e.name}`}>
+                <ArrowUpRight size={16} />
+              </Link>
+            </div>
+            <h3>{e.name}</h3>
+            <SpectrumChart id={e.id} compact />
+            <div className="spectrum-summary">
+              {e.sidebands}
+              <span>{e.bandwidth}</span>
+            </div>
+            <div className="comparison-bandwidth">
+              <span
+                style={{
+                  width: `${e.id === 'ssb-sc' ? 50 : e.id === 'vsb' ? 62.5 : 100}%`,
+                }}
+              />
+            </div>
+            <div className="comparison-carrier">Carrier: {e.carrier}</div>
+          </section>
+        ))}
       </div>
       <section className="card comparison-card">
         <div className="card-heading">
@@ -78,33 +116,6 @@ export function Comparison() {
           and coherent detection.
         </p>
       </section>
-      <div className="section-heading library-heading">
-        <div>
-          <span className="eyebrow">A VISUAL COMPARISON</span>
-          <h2>Where the information lives</h2>
-          <p>
-            Fixed spectra with the same 10 kHz carrier reference. SSB shows USB.
-          </p>
-        </div>
-      </div>
-      <div className="spectrum-comparison">
-        {experiments.map((e) => (
-          <section className="card" key={e.id}>
-            <div className="spectrum-mini-heading">
-              <span className="eyebrow">EXPERIMENT {e.number}</span>
-              <Link to={`/experiments/${e.id}`} aria-label={`Open ${e.name}`}>
-                <ArrowUpRight size={16} />
-              </Link>
-            </div>
-            <h3>{e.name}</h3>
-            <SpectrumChart id={e.id} compact />
-            <div className="spectrum-summary">
-              {e.sidebands}
-              <span>{e.bandwidth}</span>
-            </div>
-          </section>
-        ))}
-      </div>
       <div className="insights-panel comparison-insight">
         <Lightbulb size={22} />
         <div>

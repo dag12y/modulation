@@ -1,8 +1,7 @@
 import { useState } from 'react';
-import { Info, SlidersHorizontal } from 'lucide-react';
-import { experiments } from '@/data/experiments';
+import type { CSSProperties } from 'react';
+import { SlidersHorizontal } from 'lucide-react';
 import type { ExperimentData } from '@/data/experiments';
-import { Switch } from '@/components/ui/switch';
 function Slider({
   label,
   initial,
@@ -19,12 +18,13 @@ function Slider({
   unit: string;
 }) {
   const [value, setValue] = useState(initial);
+  const digits = step === 0.05 ? 2 : step < 1 ? 1 : 0;
   return (
-    <label className="slider-field">
+    <label className="dial-field">
       <span>
         {label}
         <output>
-          {value.toFixed(step < 1 ? 1 : 0)} <small>{unit}</small>
+          {value.toFixed(digits)} <small>{unit}</small>
         </output>
       </span>
       <input
@@ -33,14 +33,15 @@ function Slider({
         max={max}
         step={step}
         value={value}
+        aria-valuetext={`${value.toFixed(digits)} ${unit}`}
         onChange={(e) => setValue(Number(e.target.value))}
         style={
           {
             '--range-progress': `${((value - min) / (max - min)) * 100}%`,
-          } as React.CSSProperties
+          } as CSSProperties
         }
       />
-      <span className="range-limits">
+      <span className="dial-limits">
         <small>
           {min} {unit}
         </small>
@@ -52,7 +53,7 @@ function Slider({
   );
 }
 export function SignalControls({
-  experiment,
+  experiment: e,
   sideband,
   onSideband,
 }: {
@@ -60,119 +61,106 @@ export function SignalControls({
   sideband: string;
   onSideband: (s: string) => void;
 }) {
-  const [selected, setSelected] = useState(experiment.id);
   return (
-    <aside className="signal-controls">
-      <div className="controls-heading">
-        <span>
-          <SlidersHorizontal size={17} />
-          Signal Controls
-        </span>
-        <span className="instrument-dot" />
+    <section className="instrument-controls">
+      <div className="instrument-controls-title">
+        <SlidersHorizontal size={16} />
+        <h3>Signal parameters</h3>
+        <span>CONTROL PREVIEW</span>
       </div>
-      <p className="controls-intro">Fine-tune your signal parameters.</p>
-      <label className="select-field">
-        Modulation type
-        <select
-          value={selected}
-          onChange={(e) => setSelected(e.target.value as typeof selected)}
-        >
-          {experiments.map((e) => (
-            <option key={e.id} value={e.id}>
-              {e.name}
-            </option>
-          ))}
-        </select>
-      </label>
-      <span className="controls-eyebrow">SIGNAL PARAMETERS</span>
-      <Slider
-        label="Message frequency"
-        initial={1}
-        min={0.1}
-        max={5}
-        step={0.1}
-        unit="kHz"
-      />
-      <Slider
-        label="Carrier frequency"
-        initial={10}
-        min={5}
-        max={50}
-        step={1}
-        unit="kHz"
-      />
-      <Slider
-        label="Message amplitude"
-        initial={0.7}
-        min={0.1}
-        max={2}
-        step={0.1}
-        unit="V"
-      />
-      <Slider
-        label="Carrier amplitude"
-        initial={1}
-        min={0.1}
-        max={2}
-        step={0.1}
-        unit="V"
-      />
-      {selected === 'dsb-fc' && (
-        <Slider
-          label="Modulation index (μ)"
-          initial={0.7}
-          min={0}
-          max={1.5}
-          step={0.1}
-          unit=""
-        />
-      )}
-      {selected === 'ssb-sc' && (
-        <div className="control-sideband">
-          <span>Sideband selection</span>
-          <div className="segmented dark">
-            {['USB', 'LSB'].map((s) => (
-              <button
-                key={s}
-                onClick={() => onSideband(s)}
-                aria-pressed={sideband === s}
-                className={sideband === s ? 'selected' : ''}
-              >
-                {s}
-              </button>
-            ))}
-          </div>
-          <small>Illustrative selection only</small>
+      <div className="parameter-bank">
+        <div className="parameter-pair">
+          <span className="channel-label message-color">01 / MESSAGE</span>
+          <Slider
+            label="Frequency"
+            initial={1}
+            min={0.1}
+            max={5}
+            step={0.1}
+            unit="kHz"
+          />
+          <Slider
+            label="Amplitude"
+            initial={0.7}
+            min={0.1}
+            max={2}
+            step={0.1}
+            unit="V"
+          />
         </div>
-      )}
-      {selected === 'vsb' && (
-        <Slider
-          label="Filter bandwidth"
-          initial={1.25}
-          min={1}
-          max={2}
-          step={0.05}
-          unit="kHz"
-        />
-      )}
-      <div className="display-options">
-        <span className="controls-eyebrow">DISPLAY OPTIONS</span>
-        {['Show Envelope', 'Show Spectrum', 'Show Grid', 'Show Markers'].map(
-          (label, i) => (
-            <label key={label}>
-              <span>{label}</span>
-              <Switch aria-label={label} defaultChecked={i < 3} />
-            </label>
-          ),
-        )}
+        <div className="parameter-pair">
+          <span className="channel-label carrier-color">02 / CARRIER</span>
+          <Slider
+            label="Frequency"
+            initial={10}
+            min={5}
+            max={50}
+            step={1}
+            unit="kHz"
+          />
+          <Slider
+            label="Amplitude"
+            initial={1}
+            min={0.1}
+            max={2}
+            step={0.1}
+            unit="V"
+          />
+        </div>
+        <div className="parameter-pair">
+          <span className="channel-label modulated-color">03 / MODULATION</span>
+          {e.id === 'dsb-fc' ? (
+            <Slider
+              label="Modulation index μ"
+              initial={0.7}
+              min={0}
+              max={1.5}
+              step={0.1}
+              unit=""
+            />
+          ) : e.id === 'vsb' ? (
+            <Slider
+              label="Filter bandwidth"
+              initial={1.25}
+              min={1}
+              max={2}
+              step={0.05}
+              unit="kHz"
+            />
+          ) : e.id === 'ssb-sc' ? (
+            <div className="sideband-control">
+              <span>Reference spectrum</span>
+              <div className="segmented">
+                {['USB', 'LSB'].map((s) => (
+                  <button
+                    key={s}
+                    aria-pressed={sideband === s}
+                    className={sideband === s ? 'selected' : ''}
+                    onClick={() => onSideband(s)}
+                  >
+                    {s}
+                  </button>
+                ))}
+              </div>
+              <small>Spectrum fixture only; time trace stays fixed.</small>
+            </div>
+          ) : (
+            <div className="control-reference">
+              <strong>Balanced modulation</strong>
+              <p>
+                Carrier suppressed.
+                <br />
+                Both sidebands retained.
+              </p>
+            </div>
+          )}
+          <p className="parameter-note">
+            Sliders change readouts only.
+            <br />
+            Waveforms remain fixed.
+          </p>
+        </div>
       </div>
-      <div className="controls-notice">
-        <Info size={15} />
-        <p>
-          Static preview. Settings are illustrative and do not update the
-          charts.
-        </p>
-      </div>
-    </aside>
+    </section>
   );
 }

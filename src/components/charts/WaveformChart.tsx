@@ -15,14 +15,16 @@ import { Button } from '@/components/ui/button';
 import { Dialog } from '@/components/ui/dialog';
 export function WavePlot({
   signal = 'message',
-  color = '#5577e9',
+  color = '#38bdf8',
   overlay = false,
   tall = false,
+  visible = { message: true, carrier: true, modulated: true },
 }: {
   signal?: SignalKey;
   color?: string;
   overlay?: boolean;
   tall?: boolean;
+  visible?: { message: boolean; carrier: boolean; modulated: boolean };
 }) {
   return (
     <div
@@ -36,8 +38,8 @@ export function WavePlot({
           margin={{ top: 8, right: 12, left: -23, bottom: 2 }}
         >
           <CartesianGrid
-            stroke="#e8edf3"
-            strokeDasharray="3 4"
+            stroke="var(--scope-grid, #293348)"
+            strokeDasharray="2 4"
             vertical={true}
           />
           <XAxis
@@ -45,7 +47,7 @@ export function WavePlot({
             type="number"
             domain={[0, 4]}
             ticks={[0, 1, 2, 3, 4]}
-            tick={{ fontSize: 10, fill: '#8894a5' }}
+            tick={{ fontSize: 10, fill: '#8e9db6' }}
             axisLine={false}
             tickLine={false}
             unit=" ms"
@@ -53,7 +55,7 @@ export function WavePlot({
           <YAxis
             domain={[-2, 2]}
             ticks={[-2, 0, 2]}
-            tick={{ fontSize: 10, fill: '#8894a5' }}
+            tick={{ fontSize: 10, fill: '#8e9db6' }}
             axisLine={false}
             tickLine={false}
           />
@@ -61,24 +63,28 @@ export function WavePlot({
             contentStyle={{
               fontSize: 11,
               borderRadius: 8,
-              borderColor: '#e2e8f0',
+              borderColor: '#354159',
+              background: '#151d30',
+              color: '#e2e8f0',
             }}
             labelFormatter={(v) => `${v} ms`}
           />
           {overlay && (
             <>
               <Line
+                hide={!visible.message}
                 name="Message (V)"
                 dataKey="message"
-                stroke="#5577e9"
+                stroke="#38bdf8"
                 strokeWidth={1.5}
                 dot={false}
                 isAnimationActive={false}
               />
               <Line
+                hide={!visible.carrier}
                 name="Carrier (V)"
                 dataKey="carrier"
-                stroke="#51b7c7"
+                stroke="#a78bfa"
                 strokeWidth={1}
                 opacity={0.4}
                 dot={false}
@@ -87,6 +93,7 @@ export function WavePlot({
             </>
           )}
           <Line
+            hide={overlay && !visible.modulated}
             name="Amplitude (V)"
             dataKey={signal}
             stroke={color}
@@ -114,7 +121,7 @@ export function WaveformChart({
 }) {
   const [open, setOpen] = useState(false);
   return (
-    <section className="signal-row">
+    <section className="signal-row instrument-surface">
       <div className="signal-heading">
         <span>
           <i style={{ background: color }} />
@@ -148,6 +155,7 @@ export function WaveformChart({
         onOpenChange={setOpen}
         title={label}
         description="Fixed demonstration data · Amplitude (V) vs. Time (ms)"
+        className="scope-dialog instrument-surface"
       >
         <WavePlot signal={signal} color={color} overlay={overlay} tall />
       </Dialog>

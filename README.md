@@ -1,78 +1,103 @@
-# AM Studio — Interactive Amplitude Modulation Laboratory
+# AM Studio V2 — Hybrid Instrument Studio
 
-A responsive, frontend-only laboratory for exploring amplitude modulation. This phase is a **static educational UI**: charts and results use bundled fixtures. There is no signal processing, FFT, demodulation, simulation clock, storage, or backend.
+An alternative frontend for the AM Studio amplitude modulation laboratory. Light educational pages surround a dark scientific instrument workspace. All plots are **static teaching illustrations**. There is no modulation engine, FFT, filtering, demodulation, backend, authentication, storage, or simulation clock.
+
+## Versions and Git
+
+- **Version A:** `main`, preserved at `1e1bef0f830327761b3e544b5182aa2faef3aa46` (`Preserve original AM Studio interface`).
+- **Version B:** `design/hybrid-instrument-studio` (this checkout).
+
+Both versions use the same Vite static build and hash routes. Neither version has been deployed. The two branches remain independent; no branches have been merged or deleted. Commit or otherwise preserve local work before switching branches.
 
 ## Run locally
 
-Use Node.js 22.12+ (or a compatible newer LTS) and npm:
+Use Node.js 22.12+ and npm. With existing dependencies:
+
+```sh
+npm run dev
+```
+
+Open the URL Vite prints, usually `http://localhost:5173`. Open the instrument directly at `http://localhost:5173/#/experiments/dsb-fc`.
+
+On a fresh checkout:
 
 ```sh
 npm install
 npm run dev
 ```
 
-Open the local URL printed by Vite, usually `http://localhost:5173`. Navigation uses hash URLs, so refreshing a page works on static hosts without rewrite rules.
+No environment variables or API keys are needed. A dependency lockfile is still unavailable: offline generation failed because the registry metadata for `@types/katex` was not cached. Run `npm install` in a network-enabled environment and commit the generated lockfile before using `npm ci`. No dependency versions were changed for this redesign.
 
 ```sh
-npm run build         # TypeScript checks and production output in dist/
-npm run preview       # Serve the production build
+npm test              # Route rendering, accessible equations, and fixture checks
 npm run typecheck     # TypeScript project checks
-npm run lint          # ESLint with TypeScript rules
-npm run format:check  # Check Prettier formatting
+npm run lint          # ESLint
+npm run format:check  # Prettier
 npm run format        # Format source and configuration
+npm run build         # TypeScript + production build in dist/
+npm run preview       # Serve the production build locally
 ```
 
-No environment variables or API keys are needed.
+Hash URLs support refreshes on static hosts without routing rewrites. Production output is self-contained in `dist/`.
 
-## Pages
+## Design and pages
 
-- **Dashboard:** experiment cards, waveform illustrations, and the modulation process.
-- **DSB-FC, DSB-SC, SSB-SC, VSB:** a consistent experiment workspace with Simulation, Theory & Equations, Frequency Analysis, and Demodulation tabs.
-- **Modulation Comparison:** technique table and four illustrative spectra.
-- **Demodulation:** receiver diagram, example waveforms, and envelope-detection explanation.
-- **Theory & Equations:** six fundamentals cards, four mathematical models, and a notation reference.
-- **Calculations:** editable fields beside fixed, explicitly labeled worked examples.
-- **Export Data:** disabled CSV, PNG, and SVG export actions.
-- Unknown URLs display a recovery page linking to the dashboard.
+- **Shell:** compact expandable navigation rail, mobile drawer, contextual toolbar, disabled Run/Reset placeholders, and a display-preferences dialog. Higher grid contrast is a working, visit-only preference.
+- **Dashboard:** editorial introduction, an oscilloscope illustration, four distinct spectrum signatures, and a signal-processing flow.
+- **Experiments:** DSB-FC, DSB-SC, SSB-SC, and VSB share a single instrument bench. Large stacked/overlay traces, three visibility toggles, scope expansion, a spectrum analyzer, and a grouped parameter bank sit on one dark surface. A light mathematical model, key insight, signal explanations, and characteristics follow below.
+- **Comparison:** four spectrum previews lead the page. Bandwidth bars share a common 2 kHz scale. The educational comparison table follows.
+- **Theory & equations:** ruled field notes, KaTeX models, and a notation reference.
+- **Demodulation:** a conceptual receiver flow and independent fixed received/recovered traces.
+- **Calculations:** a dark parameter panel beside fixed worked examples. Editable inputs do not calculate results.
+- **Export data:** a coordinated light/dark page with disabled CSV, PNG, and SVG actions.
+- Unknown routes show a recovery page.
+
+The palette uses cyan for message signals, violet for carriers, lime for modulated signals, amber for spectrum carriers, and cyan for sidebands. Scope geometry, grid density, typography, and controls avoid animated signal activity and decorative glow.
+
+## Presentation interactions and limits
+
+Navigation, Radix tabs, the mobile drawer, display preferences, signal visibility, scope expansion, stacked/overlay selection, and USB/LSB spectrum selection work. Sliders update their readouts only. Every waveform remains a bundled fixed fixture; no slider changes a chart.
+
+SSB selects an alternative **spectrum fixture** and mathematical model; its time trace remains fixed. Frequency-domain diagrams show positive frequencies only. DSB/SSB use single-tone components with a 10 kHz carrier reference and 1 kHz message. VSB uses a separate, explicitly labeled broadband schematic with one full 1 kHz sideband and a 0.25 kHz vestige; it is not a computed spectrum of the adjacent time trace. The VSB example suppresses its carrier; other variants can retain it.
+
+Run, reset, calculations, saving, and export remain unavailable. Preferences and parameter readouts are not persisted. Native range inputs support keyboard and touch. Motion follows `prefers-reduced-motion`. Dialogs use Radix focus management and Escape handling. Equations include accessible MathML and scroll within their panels when needed.
 
 ## Structure
 
 ```text
 src/
-├── app/                  # App, lightweight hash router
+├── app/                    # Existing app and hash router
 ├── components/
-│   ├── layout/           # AppShell, Sidebar, Topbar
-│   ├── charts/           # WaveformChart, WavePlot, SpectrumChart
-│   ├── simulation/       # ExperimentHeader, MetricsPanel, SignalControls
-│   ├── ui/               # shadcn-style Button, Tabs, Switch, Dialog
-│   ├── Equation.tsx      # KaTeX HTML + accessible MathML
-│   └── FlowDiagram.tsx   # Modulation and receiver flows
-├── data/                 # Experiment definitions and fixed signal fixtures
-├── lib/                  # Tailwind class merging utility
-├── pages/                # Dashboard, Experiment, Comparison, Demodulation,
-│                         # Theory, Calculations, Export
-├── styles/globals.css    # Tailwind, tokens, responsive component styles
+│   ├── layout/             # AppShell, compact Sidebar, contextual Topbar
+│   ├── charts/             # WavePlot, WaveformChart, SpectrumChart
+│   ├── simulation/         # Instrument controls; retained legacy UI modules
+│   ├── ui/                 # Reused Radix-based primitives
+│   ├── Equation.tsx        # KaTeX HTML and MathML
+│   └── FlowDiagram.tsx     # Modulator/receiver diagrams
+├── data/                   # Existing typed experiment metadata and fixed fixtures
+├── pages/                  # All existing destinations
+├── styles/globals.css      # Shared foundation and reference-page layout
+├── styles/hybrid.css       # Version B system, composition, and responsive rules
 └── main.tsx
-public/favicon.svg
+tests/                      # Node test runner + Vite server-render checks
+public/favicon.svg          # Local vector mark
 ```
 
-The UI uses React, TypeScript, Vite, Tailwind CSS, Radix-based shadcn-style components, Lucide, Recharts, and KaTeX. `components.json` configures shadcn aliases and styling. CSS uses Inter when installed, with system sans-serif fallbacks. All application data and assets are local; there are no runtime API calls.
+Existing routing, experiment metadata, fixtures, KaTeX rendering, Recharts, and Radix components are retained. The V2 stylesheet loads after the shared foundation; it also restyles every reference page. No runtime network calls or external visual assets were added.
 
-## Presentation interactions
+## Verification and local review
 
-Sidebar navigation and collapse, the mobile drawer, keyboard-accessible tabs, chart expansion dialogs, stacked/overlay views, and USB/LSB fixture selection work. Sliders, dropdowns, and switches keep presentation state only. Display switches do not alter charts. The control-panel modulation dropdown previews controls; use sidebar links to change experiments. Switching experiments resets local presentation settings.
+TypeScript, lint, production build, formatting, route-render checks, and fixture consistency checks are run for the redesign. Tests compile an isolated server-render bundle into ignored `node_modules/.cache/am-studio-tests` and clean it afterward. Server rendering verifies content and semantics; it does not verify Recharts geometry or browser interactions.
 
-Run, reset, save, downloads, calculator execution, and exports are unavailable. Editable calculator fields never update the worked examples. Metrics are fixed reference values, including when a different SSB spectrum fixture is selected.
+This execution environment blocks listening ports (`EPERM`) and Chromium startup. Browser screenshots, measured overflow, keyboard interaction, and viewport rendering therefore require local review. The user will open the application locally.
 
-Spectra show positive frequencies only. DSB uses message bandwidth B = 1 kHz and carrier reference 10 kHz. The VSB example has a suppressed carrier and a 0.25 kHz vestige; other VSB variants may retain a carrier. Single-tone spectra illustrate components rather than continuous message bands.
+Suggested review sizes: **1440, 1024, 768, 390, and 320 px**. Check each experiment, comparison, theory, receiver, calculations, and export. Confirm:
 
-## Verification and environment limits
+1. Charts remain legible; mobile analyzers and learning panels stack.
+2. Tab/Shift+Tab reaches navigation, tabs, signal toggles, sliders, and expansion controls. Arrow keys adjust native sliders and Radix tabs.
+3. Drawer and scope dialogs trap focus, close with Escape, and return focus.
+4. Readout changes leave traces fixed. SSB changes only the selected spectrum illustration and model.
+5. Long equations scroll inside their panel, and the page has no horizontal overflow.
+6. Display preferences increase grid contrast; reduced motion disables transitions.
 
-- Production build, TypeScript, ESLint, and Prettier checks pass with locally available dependencies.
-- Server-render smoke checks pass for all ten main destinations and the unknown-route fallback; theory output contains KaTeX and MathML.
-- Browser layout, keyboard interaction, and responsive behavior still need browser verification. This sandbox blocked both a listening development server (`EPERM`) and Chromium startup.
-- Registry access was blocked (`EAI_AGAIN`). Validation used existing local packages, cached archives, and locally bundled KaTeX. Dependency versions reflect available compatible packages; newest registry releases could not be verified. A clean registry installation and lockfile generation remain to be performed in a network-enabled environment. Use `npm install`, then commit the generated lockfile before team development.
-
-## Simulation phase
-
-Replace fixtures through the data/component boundary. Add typed signal parameters, modulation and filtering engines, FFT data, real demodulation, derived metrics, and input validation. Then connect transport/timing controls, define how reset behaves, implement actual calculations, session persistence, and real CSV/PNG/SVG export. Validate the numerical models and receiver behavior with dedicated scientific tests before connecting them to these displays.
+The installed KaTeX package includes WOFF2 fonts. Vite also reports missing legacy WOFF/TTF fallbacks already referenced by the local package stylesheet; modern browser WOFF2 assets are emitted successfully. A clean dependency installation and browser review remain before deployment or user evaluation.
