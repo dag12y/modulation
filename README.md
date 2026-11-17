@@ -22,11 +22,11 @@ Open the URL Vite prints, usually `http://localhost:5173`. Open the instrument d
 On a fresh checkout:
 
 ```sh
-npm install
+npm ci
 npm run dev
 ```
 
-No environment variables or API keys are needed. A dependency lockfile is still unavailable: offline generation failed because the registry metadata for `@types/katex` was not cached. Run `npm install` in a network-enabled environment and commit the generated lockfile before using `npm ci`. No dependency versions were changed for this redesign.
+No environment variables or API keys are needed. Commit `package-lock.json` with dependency changes so local and Vercel installations use the same dependency tree. The TypeScript ESLint parser and plugin are pinned together at 8.46.0, which supports TypeScript 5.9.3.
 
 ```sh
 npm test              # Route rendering, accessible equations, and fixture checks
