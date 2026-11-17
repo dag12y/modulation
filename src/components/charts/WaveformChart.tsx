@@ -18,12 +18,14 @@ export function WavePlot({
   color = '#38bdf8',
   overlay = false,
   tall = false,
+  showTimeAxis = true,
   visible = { message: true, carrier: true, modulated: true },
 }: {
   signal?: SignalKey;
   color?: string;
   overlay?: boolean;
   tall?: boolean;
+  showTimeAxis?: boolean;
   visible?: { message: boolean; carrier: boolean; modulated: boolean };
 }) {
   return (
@@ -50,6 +52,7 @@ export function WavePlot({
             tick={{ fontSize: 10, fill: '#8e9db6' }}
             axisLine={false}
             tickLine={false}
+            hide={!showTimeAxis}
             unit=" ms"
           />
           <YAxis

@@ -1,5 +1,12 @@
 import { useState } from 'react';
-import { ArrowRight, BookOpen, Maximize2, Radio, ScanLine } from 'lucide-react';
+import {
+  ArrowRight,
+  BookOpen,
+  Maximize2,
+  Radio,
+  ScanLine,
+  SlidersHorizontal,
+} from 'lucide-react';
 import type { ExperimentData } from '@/data/experiments';
 import { experiments } from '@/data/experiments';
 import { SignalControls } from '@/components/simulation/SignalControls';
@@ -48,6 +55,15 @@ export function Experiment({ experiment: e }: { experiment: ExperimentData }) {
     modulated: true,
   });
   const hasVisibleSignals = Object.values(visible).some(Boolean);
+  const lastVisibleChannel = channels.filter((c) => visible[c.key]).at(-1)?.key;
+  const modulationSummary =
+    e.id === 'dsb-fc'
+      ? ['μ', '0.70']
+      : e.id === 'vsb'
+        ? ['BW', '1.25 kHz']
+        : e.id === 'ssb-sc'
+          ? ['Mode', sideband]
+          : ['Mode', 'Balanced'];
   const traces = (
     <>
       {!hasVisibleSignals ? (
@@ -81,6 +97,7 @@ export function Experiment({ experiment: e }: { experiment: ExperimentData }) {
                 <WavePlot
                   signal={c.key === 'modulated' ? signalKeys[e.id] : c.key}
                   color={c.color}
+                  showTimeAxis={c.key === lastVisibleChannel}
                 />
               </div>
             ),
@@ -177,6 +194,28 @@ export function Experiment({ experiment: e }: { experiment: ExperimentData }) {
                     </button>
                   </div>
                 </div>
+                <div className="scope-param-summary">
+                  <span>
+                    <b>fm</b> 1.0 kHz
+                  </span>
+                  <span>
+                    <b>fc</b> 10 kHz
+                  </span>
+                  <span>
+                    <b>{modulationSummary[0]}</b> {modulationSummary[1]}
+                  </span>
+                  <button
+                    type="button"
+                    className="scope-param-link"
+                    onClick={() =>
+                      document
+                        .getElementById('signal-parameters')
+                        ?.scrollIntoView({ block: 'center' })
+                    }
+                  >
+                    <SlidersHorizontal size={13} /> Parameters
+                  </button>
+                </div>
                 <div className="scope-legend">
                   {channels.map((c) => (
                     <button
@@ -261,12 +300,12 @@ export function Experiment({ experiment: e }: { experiment: ExperimentData }) {
                   Positive-frequency illustration · no FFT
                 </p>
               </section>
+              <SignalControls
+                experiment={e}
+                sideband={sideband}
+                onSideband={setSideband}
+              />
             </div>
-            <SignalControls
-              experiment={e}
-              sideband={sideband}
-              onSideband={setSideband}
-            />
             <div className="bench-footer">
               <span>AM STUDIO / INSTRUMENT 0{Number(e.number)}</span>
               <span>Static teaching illustrations · no simulation running</span>

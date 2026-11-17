@@ -42,7 +42,7 @@ Hash URLs support refreshes on static hosts without routing rewrites. Production
 
 ## Design and pages
 
-- **Shell:** compact expandable navigation rail, mobile drawer, contextual toolbar, disabled Run/Reset placeholders, and a display-preferences dialog. Higher grid contrast is a working, visit-only preference.
+- **Shell:** compact expandable navigation rail, mobile drawer, contextual toolbar, display-preferences dialog, and a parameter preview beside the scope on wide screens. Higher grid contrast is a working, visit-only preference.
 - **Dashboard:** editorial introduction, an oscilloscope illustration, four distinct spectrum signatures, and a signal-processing flow.
 - **Experiments:** DSB-FC, DSB-SC, SSB-SC, and VSB share a single instrument bench. Large stacked/overlay traces, three visibility toggles, scope expansion, a spectrum analyzer, and a grouped parameter bank sit on one dark surface. A light mathematical model, key insight, signal explanations, and characteristics follow below.
 - **Comparison:** four spectrum previews lead the page. Bandwidth bars share a common 2 kHz scale. The educational comparison table follows.
@@ -60,7 +60,7 @@ Navigation, Radix tabs, the mobile drawer, display preferences, signal visibilit
 
 SSB selects an alternative **spectrum fixture** and mathematical model; its time trace remains fixed. Frequency-domain diagrams show positive frequencies only. DSB/SSB use single-tone components with a 10 kHz carrier reference and 1 kHz message. VSB uses a separate, explicitly labeled broadband schematic with one full 1 kHz sideband and a 0.25 kHz vestige; it is not a computed spectrum of the adjacent time trace. The VSB example suppresses its carrier; other variants can retain it.
 
-Run, reset, calculations, saving, and export remain unavailable. Preferences and parameter readouts are not persisted. Native range inputs support keyboard and touch. Motion follows `prefers-reduced-motion`. Dialogs use Radix focus management and Escape handling. Equations include accessible MathML and scroll within their panels when needed.
+Calculations, saving, and export remain unavailable. Preferences and parameter readouts are not persisted. Native range inputs support keyboard and touch. Motion follows `prefers-reduced-motion`. Dialogs use Radix focus management and Escape handling. Equations include accessible MathML and scroll within their panels when needed.
 
 ## Structure
 

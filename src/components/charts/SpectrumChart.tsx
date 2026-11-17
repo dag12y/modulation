@@ -36,7 +36,7 @@ export function SpectrumChart({
         <BarChart
           data={data}
           barSize={5}
-          margin={{ top: 28, right: 14, left: -20, bottom: 6 }}
+          margin={{ top: 28, right: 22, left: -20, bottom: 6 }}
         >
           <CartesianGrid
             stroke="var(--scope-grid, #293348)"

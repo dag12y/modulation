@@ -160,25 +160,6 @@ main {
 .toolbar-actions {
   gap: 9px;
 }
-.toolbar-preview {
-  display: flex;
-  font-size: 10px;
-  color: #768173;
-  margin-right: 14px;
-}
-.toolbar-preview > span {
-  background: #8c9c7e;
-}
-.toolbar-separator {
-  height: 20px;
-  width: 1px;
-  background: #e4e8ec;
-  margin: 0 5px;
-}
-.toolbar-actions .button-primary {
-  background: #f0f2f5;
-  color: #526074;
-}
 .preference-option {
   display: flex;
   gap: 12px;
@@ -414,13 +395,14 @@ main {
   display: flex;
   align-items: center;
   gap: 10px;
+  white-space: nowrap;
 }
 .bench-topline b {
   color: #4c5d75;
   font-weight: 400;
 }
 .fixed-status {
-  font-size: 8px;
+  font-size: 9px;
 }
 .fixed-status i {
   height: 5px;
@@ -443,9 +425,9 @@ main {
   gap: 10px;
 }
 .instrument-kicker {
-  font: 8px monospace;
-  color: #7f8fa8;
-  letter-spacing: 1.8px;
+  font: 9px monospace;
+  color: #8798b2;
+  letter-spacing: 1.6px;
 }
 .scope-toolbar h2 {
   font-size: 18px;
@@ -458,6 +440,20 @@ main {
   display: flex;
   align-items: center;
   gap: 12px;
+}
+.scope-param-summary {
+  display: none;
+}
+.scope-param-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border: 0;
+  background: transparent;
+  color: #b8df8b;
+  font-size: 10px;
+  min-height: 32px;
+  padding: 4px 0;
 }
 .expand-scope {
   display: grid;
@@ -528,10 +524,10 @@ main {
   color: #7485a0;
 }
 .scope-channel .wave-plot {
-  height: 118px;
+  height: 112px;
 }
 .scope-traces {
-  min-height: 450px;
+  min-height: 0;
 }
 .scope-empty {
   display: grid;
@@ -549,7 +545,7 @@ main {
   gap: 10px;
   color: #637894;
   padding: 14px 0 20px;
-  font: 8px monospace;
+  font: 9px monospace;
   letter-spacing: 0.3px;
 }
 .scope-bottomline strong {
@@ -636,14 +632,16 @@ main {
   line-height: 1.8;
 }
 .frequency-analyzer .spectrum-disclaimer {
-  font-size: 8px;
-  color: #6d819d;
+  font-size: 9px;
+  color: #788ca8;
   margin-top: 13px;
 }
 .instrument-controls {
   border-top: 1px solid #2a344a;
   background: #151d2e;
   padding: 20px 25px 10px;
+  grid-column: 1 / -1;
+  scroll-margin-top: 82px;
 }
 .instrument-controls-title {
   display: flex;
@@ -681,7 +679,7 @@ main {
 }
 .channel-label {
   display: block;
-  font: 8px monospace;
+  font: 9px monospace;
   letter-spacing: 1.3px;
   margin-bottom: 18px;
 }
@@ -728,10 +726,10 @@ main {
   color: #7588a3;
 }
 .dial-limits small {
-  font: 8px monospace;
+  font: 9px monospace;
 }
 .parameter-note {
-  font-size: 9px;
+  font-size: 10px;
   margin: 13px 0;
   line-height: 1.7;
 }
@@ -1031,7 +1029,7 @@ main {
   height: 156px;
 }
 .experiment-art .plot-axis-label {
-  font-size: 8px;
+  font-size: 9px;
 }
 .studio-experiment h3 {
   display: flex;
@@ -1396,21 +1394,106 @@ main {
   background: #eaf0e5;
   color: #65814e;
 }
+@media (min-width: 1360px) {
+  .analyzer-grid {
+    grid-template-columns:
+      minmax(0, 2fr) minmax(255px, 0.95fr)
+      minmax(248px, 0.88fr);
+  }
+  .oscilloscope {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .frequency-analyzer {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .instrument-controls {
+    grid-column: 3;
+    grid-row: 1;
+    border-top: 0;
+    border-left: 1px solid #2a344a;
+    padding: 24px 22px;
+  }
+  .instrument-controls .instrument-controls-title {
+    align-items: flex-start;
+  }
+  .instrument-controls .instrument-controls-title > span {
+    margin-left: auto;
+    white-space: nowrap;
+  }
+  .instrument-controls .parameter-bank {
+    grid-template-columns: 1fr;
+    margin-top: 18px;
+  }
+  .instrument-controls .parameter-pair {
+    padding: 14px 0;
+    border-left: 0;
+    border-top: 1px solid #2a354b;
+  }
+  .instrument-controls .parameter-pair:first-child {
+    padding-top: 0;
+    border-top: 0;
+  }
+  .instrument-controls .parameter-pair:last-child {
+    padding-bottom: 0;
+  }
+  .instrument-controls .channel-label {
+    margin-bottom: 12px;
+  }
+  .instrument-controls .dial-field {
+    margin-bottom: 11px;
+  }
+  .instrument-controls .dial-field input {
+    margin-top: 6px;
+  }
+  .instrument-controls .parameter-note {
+    margin: 8px 0 0;
+  }
+  .instrument-controls .sideband-control small {
+    margin-top: 6px;
+  }
+}
 @media (min-width: 1600px) {
   main {
     padding: 45px 60px;
   }
   .scope-channel .wave-plot {
-    height: 145px;
-  }
-  .scope-traces {
-    min-height: 525px;
+    height: 132px;
   }
   .scope-traces.overlay-traces .wave-plot {
-    height: 525px;
+    height: 500px;
   }
   .frequency-analyzer .spectrum-plot {
     height: 300px;
+  }
+}
+@media (max-width: 1359px) {
+  .scope-param-summary {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 14px;
+    font: 10px/1 monospace;
+    color: #a9b8cc;
+  }
+  .scope-param-summary > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    border: 1px solid #29354b;
+    background: #0e1525;
+    border-radius: 4px;
+    padding: 6px 8px;
+  }
+  .scope-param-summary b {
+    color: #7f90ab;
+    font-weight: 400;
+  }
+  .scope-param-link {
+    margin-left: auto;
+    min-height: 36px;
   }
 }
 @media (max-width: 1200px) {
@@ -1523,7 +1606,7 @@ main {
     display: none;
   }
   .scope-bottomline {
-    font-size: 7px;
+    font-size: 8px;
   }
   .signal-explanations {
     gap: 22px;
@@ -1548,7 +1631,7 @@ main {
 }
 @media (max-width: 700px) {
   main {
-    padding: 24px 18px;
+    padding: 18px 18px 24px;
   }
   .topbar {
     height: 59px;
@@ -1586,24 +1669,26 @@ main {
   }
   .studio-page-title {
     gap: 12px;
-    margin-bottom: 20px;
+    margin-bottom: 14px;
   }
   .studio-page-title .eyebrow {
-    font-size: 8px;
+    font-size: 9px;
   }
   .studio-page-title h1 {
-    font-size: 28px;
+    font-size: 26px;
     letter-spacing: -1px;
     line-height: 1.15;
+    margin: 10px 0 8px;
   }
   .studio-page-title p {
     font-size: 11px;
+    line-height: 1.7;
   }
   .page-index {
     display: none;
   }
   .experiment-switcher {
-    margin-bottom: 15px;
+    margin-bottom: 12px;
   }
   .experiment-switcher a {
     padding: 13px 6px;
@@ -1615,18 +1700,18 @@ main {
   }
   .hybrid-experiment .tabs-list {
     gap: 24px;
-    margin-bottom: 13px;
+    margin-bottom: 10px;
   }
   .hybrid-experiment .tabs-trigger {
     font-size: 10px;
     white-space: nowrap;
   }
   .bench-topline {
-    padding: 14px 16px;
-    font-size: 8px;
+    padding: 12px 15px;
+    font-size: 9px;
   }
   .bench-topline .fixed-status {
-    font-size: 7px;
+    font-size: 8px;
     letter-spacing: 0.3px;
   }
   .bench-topline .fixed-status i {
@@ -1636,7 +1721,14 @@ main {
     grid-template-columns: 1fr;
   }
   .oscilloscope {
+    order: 1;
     padding: 20px 14px 0;
+  }
+  .instrument-controls {
+    order: 2;
+  }
+  .frequency-analyzer {
+    order: 3;
   }
   .scope-toolbar h2 {
     font-size: 18px;
@@ -1656,20 +1748,20 @@ main {
     font-size: 10px;
   }
   .scope-channel .wave-plot {
-    height: 125px;
+    height: 104px;
   }
   .scope-traces {
-    min-height: 470px;
+    min-height: 0;
   }
   .scope-traces.overlay-traces .wave-plot {
-    height: 470px;
+    height: 420px;
   }
   .scope-channel-label small {
     font-size: 9px;
   }
   .scope-bottomline {
-    padding: 12px 0 17px;
-    font-size: 7px;
+    padding: 12px 0 16px;
+    font-size: 8px;
   }
   .scope-bottomline strong {
     margin-left: 3px;
@@ -1824,20 +1916,20 @@ main {
     height: 145px;
   }
   .studio-experiment-label {
-    font-size: 7px;
+    font-size: 8px;
     letter-spacing: 0.2px;
   }
   .studio-experiment h3 {
-    font-size: 22px;
+    font-size: 23px;
   }
   .studio-experiment h4 {
-    font-size: 9px;
-  }
-  .studio-experiment p {
     font-size: 10px;
   }
+  .studio-experiment p {
+    font-size: 11px;
+  }
   .experiment-entry {
-    font-size: 9px;
+    font-size: 10px;
   }
   .studio-principle {
     margin-top: 35px;
@@ -1903,15 +1995,38 @@ main {
     font-size: 12px;
   }
 }
+@media (max-width: 560px) {
+  .studio-experiments {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .experiment-art .spectrum-plot.compact {
+    height: 185px;
+  }
+  .studio-experiment-label {
+    font-size: 8px;
+  }
+  .studio-experiment h3 {
+    font-size: 24px;
+  }
+  .studio-experiment h4 {
+    font-size: 11px;
+    min-height: 0;
+  }
+  .studio-experiment p {
+    font-size: 12px;
+    margin: 10px 0 16px;
+  }
+  .experiment-entry {
+    font-size: 10px;
+  }
+}
 @media (max-width: 380px) {
   .intro-copy h1 {
     font-size: 39px;
   }
-  .studio-experiments {
-    grid-template-columns: 1fr;
-  }
   .experiment-art .spectrum-plot.compact {
-    height: 170px;
+    height: 185px;
   }
   .studio-experiment h4 {
     min-height: 0;
@@ -1923,8 +2038,17 @@ main {
     padding: 12px;
     letter-spacing: 0;
   }
+  .bench-topline .fixed-status {
+    display: none;
+  }
+  .hybrid-experiment .tabs-list {
+    gap: 12px;
+  }
+  .hybrid-experiment .tabs-trigger {
+    font-size: 9px;
+  }
   .fixed-status {
-    font-size: 6px !important;
+    font-size: 8px !important;
   }
   .scope-actions {
     gap: 0;
@@ -1933,7 +2057,7 @@ main {
     font-size: 16px;
   }
   .scope-bottomline > span:first-child {
-    font-size: 6px;
+    font-size: 8px;
   }
   .instrument-controls-title > span {
     font-size: 7px;

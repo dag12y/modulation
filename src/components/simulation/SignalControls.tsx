@@ -62,11 +62,11 @@ export function SignalControls({
   onSideband: (s: string) => void;
 }) {
   return (
-    <section className="instrument-controls">
+    <section className="instrument-controls" id="signal-parameters">
       <div className="instrument-controls-title">
         <SlidersHorizontal size={16} />
         <h3>Signal parameters</h3>
-        <span>CONTROL PREVIEW</span>
+        <span>PARAMETER PREVIEW</span>
       </div>
       <div className="parameter-bank">
         <div className="parameter-pair">

@@ -1318,7 +1318,7 @@ main:focus {
 .plot-axis-label {
   display: block;
   text-align: center;
-  font-size: 8px;
+  font-size: 9px;
   color: #95a2b3;
   margin-top: -3px;
 }

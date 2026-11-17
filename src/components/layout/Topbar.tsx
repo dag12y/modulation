@@ -1,11 +1,5 @@
 import { useState } from 'react';
-import {
-  ChevronRight,
-  PanelLeft,
-  Play,
-  RotateCcw,
-  SlidersHorizontal,
-} from 'lucide-react';
+import { ChevronRight, PanelLeft, SlidersHorizontal } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Dialog } from '@/components/ui/dialog';
 import { usePath, Link } from '@/app/router';
@@ -51,28 +45,6 @@ export function Topbar({ onToggle }: { onToggle: () => void }) {
         </span>
       </div>
       <div className="toolbar-actions">
-        <span className="toolbar-preview">
-          <span />
-          Static preview
-        </span>
-        <Button
-          variant="outline"
-          size="sm"
-          disabled
-          title="Playback unavailable in static preview"
-        >
-          <Play size={12} />
-          Run
-        </Button>
-        <Button
-          variant="ghost"
-          size="icon"
-          disabled
-          aria-label="Reset unavailable in static preview"
-        >
-          <RotateCcw size={15} />
-        </Button>
-        <span className="toolbar-separator" />
         <Button
           variant="ghost"
           size="icon"
