@@ -1,0 +1,3611 @@
+[
+  {
+    "time": 0.0,
+    "message": 1.0,
+    "carrier": 1.0,
+    "modulated": 1.7,
+    "suppressed": 1.0,
+    "single": 0.5,
+    "vestigial": 0.62
+  },
+  {
+    "time": 0.01,
+    "message": 0.998,
+    "carrier": 0.809,
+    "modulated": 1.3742,
+    "suppressed": 0.8074,
+    "single": 0.3853,
+    "vestigial": 0.4866
+  },
+  {
+    "time": 0.02,
+    "message": 0.9921,
+    "carrier": 0.309,
+    "modulated": 0.5236,
+    "suppressed": 0.3066,
+    "single": 0.0937,
+    "vestigial": 0.1448
+  },
+  {
+    "time": 0.03,
+    "message": 0.9823,
+    "carrier": -0.309,
+    "modulated": -0.5215,
+    "suppressed": -0.3035,
+    "single": -0.2409,
+    "vestigial": -0.2559
+  },
+  {
+    "time": 0.04,
+    "message": 0.9686,
+    "carrier": -0.809,
+    "modulated": -1.3575,
+    "suppressed": -0.7836,
+    "single": -0.4649,
+    "vestigial": -0.5414
+  },
+  {
+    "time": 0.05,
+    "message": 0.9511,
+    "carrier": -1.0,
+    "modulated": -1.6657,
+    "suppressed": -0.9511,
+    "single": -0.4755,
+    "vestigial": -0.5897
+  },
+  {
+    "time": 0.06,
+    "message": 0.9298,
+    "carrier": -0.809,
+    "modulated": -1.3356,
+    "suppressed": -0.7522,
+    "single": -0.2679,
+    "vestigial": -0.3841
+  },
+  {
+    "time": 0.07,
+    "message": 0.9048,
+    "carrier": -0.309,
+    "modulated": -0.5047,
+    "suppressed": -0.2796,
+    "single": 0.0627,
+    "vestigial": -0.0195
+  },
+  {
+    "time": 0.08,
+    "message": 0.8763,
+    "carrier": 0.309,
+    "modulated": 0.4986,
+    "suppressed": 0.2708,
+    "single": 0.3645,
+    "vestigial": 0.342
+  },
+  {
+    "time": 0.09,
+    "message": 0.8443,
+    "carrier": 0.809,
+    "modulated": 1.2872,
+    "suppressed": 0.6831,
+    "single": 0.499,
+    "vestigial": 0.5432
+  },
+  {
+    "time": 0.1,
+    "message": 0.809,
+    "carrier": 1.0,
+    "modulated": 1.5663,
+    "suppressed": 0.809,
+    "single": 0.4045,
+    "vestigial": 0.5016
+  },
+  {
+    "time": 0.11,
+    "message": 0.7705,
+    "carrier": 0.809,
+    "modulated": 1.2454,
+    "suppressed": 0.6234,
+    "single": 0.1243,
+    "vestigial": 0.2441
+  },
+  {
+    "time": 0.12,
+    "message": 0.729,
+    "carrier": 0.309,
+    "modulated": 0.4667,
+    "suppressed": 0.2253,
+    "single": -0.2129,
+    "vestigial": -0.1077
+  },
+  {
+    "time": 0.13,
+    "message": 0.6845,
+    "carrier": -0.309,
+    "modulated": -0.4571,
+    "suppressed": -0.2115,
+    "single": -0.4524,
+    "vestigial": -0.3946
+  },
+  {
+    "time": 0.14,
+    "message": 0.6374,
+    "carrier": -0.809,
+    "modulated": -1.17,
+    "suppressed": -0.5157,
+    "single": -0.4843,
+    "vestigial": -0.4918
+  },
+  {
+    "time": 0.15,
+    "message": 0.5878,
+    "carrier": -1.0,
+    "modulated": -1.4114,
+    "suppressed": -0.5878,
+    "single": -0.2939,
+    "vestigial": -0.3644
+  },
+  {
+    "time": 0.16,
+    "message": 0.5358,
+    "carrier": -0.809,
+    "modulated": -1.1125,
+    "suppressed": -0.4335,
+    "single": 0.0314,
+    "vestigial": -0.0802
+  },
+  {
+    "time": 0.17,
+    "message": 0.4818,
+    "carrier": -0.309,
+    "modulated": -0.4132,
+    "suppressed": -0.1489,
+    "single": 0.3423,
+    "vestigial": 0.2244
+  },
+  {
+    "time": 0.18,
+    "message": 0.4258,
+    "carrier": 0.309,
+    "modulated": 0.4011,
+    "suppressed": 0.1316,
+    "single": 0.4961,
+    "vestigial": 0.4086
+  },
+  {
+    "time": 0.19,
+    "message": 0.3681,
+    "carrier": 0.809,
+    "modulated": 1.0175,
+    "suppressed": 0.2978,
+    "single": 0.4222,
+    "vestigial": 0.3923
+  },
+  {
+    "time": 0.2,
+    "message": 0.309,
+    "carrier": 1.0,
+    "modulated": 1.2163,
+    "suppressed": 0.309,
+    "single": 0.1545,
+    "vestigial": 0.1916
+  },
+  {
+    "time": 0.21,
+    "message": 0.2487,
+    "carrier": 0.809,
+    "modulated": 0.9499,
+    "suppressed": 0.2012,
+    "single": -0.1841,
+    "vestigial": -0.0916
+  },
+  {
+    "time": 0.22,
+    "message": 0.1874,
+    "carrier": 0.309,
+    "modulated": 0.3495,
+    "suppressed": 0.0579,
+    "single": -0.4382,
+    "vestigial": -0.3191
+  },
+  {
+    "time": 0.23,
+    "message": 0.1253,
+    "carrier": -0.309,
+    "modulated": -0.3361,
+    "suppressed": -0.0387,
+    "single": -0.4911,
+    "vestigial": -0.3826
+  },
+  {
+    "time": 0.24,
+    "message": 0.0628,
+    "carrier": -0.809,
+    "modulated": -0.8446,
+    "suppressed": -0.0508,
+    "single": -0.3187,
+    "vestigial": -0.2544
+  },
+  {
+    "time": 0.25,
+    "message": 0.0,
+    "carrier": -1.0,
+    "modulated": -1.0,
+    "suppressed": -0.0,
+    "single": -0.0,
+    "vestigial": -0.0
+  },
+  {
+    "time": 0.26,
+    "message": -0.0628,
+    "carrier": -0.809,
+    "modulated": -0.7735,
+    "suppressed": 0.0508,
+    "single": 0.3187,
+    "vestigial": 0.2544
+  },
+  {
+    "time": 0.27,
+    "message": -0.1253,
+    "carrier": -0.309,
+    "modulated": -0.2819,
+    "suppressed": 0.0387,
+    "single": 0.4911,
+    "vestigial": 0.3826
+  },
+  {
+    "time": 0.28,
+    "message": -0.1874,
+    "carrier": 0.309,
+    "modulated": 0.2685,
+    "suppressed": -0.0579,
+    "single": 0.4382,
+    "vestigial": 0.3191
+  },
+  {
+    "time": 0.29,
+    "message": -0.2487,
+    "carrier": 0.809,
+    "modulated": 0.6682,
+    "suppressed": -0.2012,
+    "single": 0.1841,
+    "vestigial": 0.0916
+  },
+  {
+    "time": 0.3,
+    "message": -0.309,
+    "carrier": 1.0,
+    "modulated": 0.7837,
+    "suppressed": -0.309,
+    "single": -0.1545,
+    "vestigial": -0.1916
+  },
+  {
+    "time": 0.31,
+    "message": -0.3681,
+    "carrier": 0.809,
+    "modulated": 0.6005,
+    "suppressed": -0.2978,
+    "single": -0.4222,
+    "vestigial": -0.3923
+  },
+  {
+    "time": 0.32,
+    "message": -0.4258,
+    "carrier": 0.309,
+    "modulated": 0.2169,
+    "suppressed": -0.1316,
+    "single": -0.4961,
+    "vestigial": -0.4086
+  },
+  {
+    "time": 0.33,
+    "message": -0.4818,
+    "carrier": -0.309,
+    "modulated": -0.2048,
+    "suppressed": 0.1489,
+    "single": -0.3423,
+    "vestigial": -0.2244
+  },
+  {
+    "time": 0.34,
+    "message": -0.5358,
+    "carrier": -0.809,
+    "modulated": -0.5056,
+    "suppressed": 0.4335,
+    "single": -0.0314,
+    "vestigial": 0.0802
+  },
+  {
+    "time": 0.35,
+    "message": -0.5878,
+    "carrier": -1.0,
+    "modulated": -0.5886,
+    "suppressed": 0.5878,
+    "single": 0.2939,
+    "vestigial": 0.3644
+  },
+  {
+    "time": 0.36,
+    "message": -0.6374,
+    "carrier": -0.809,
+    "modulated": -0.448,
+    "suppressed": 0.5157,
+    "single": 0.4843,
+    "vestigial": 0.4918
+  },
+  {
+    "time": 0.37,
+    "message": -0.6845,
+    "carrier": -0.309,
+    "modulated": -0.1609,
+    "suppressed": 0.2115,
+    "single": 0.4524,
+    "vestigial": 0.3946
+  },
+  {
+    "time": 0.38,
+    "message": -0.729,
+    "carrier": 0.309,
+    "modulated": 0.1513,
+    "suppressed": -0.2253,
+    "single": 0.2129,
+    "vestigial": 0.1077
+  },
+  {
+    "time": 0.39,
+    "message": -0.7705,
+    "carrier": 0.809,
+    "modulated": 0.3727,
+    "suppressed": -0.6234,
+    "single": -0.1243,
+    "vestigial": -0.2441
+  },
+  {
+    "time": 0.4,
+    "message": -0.809,
+    "carrier": 1.0,
+    "modulated": 0.4337,
+    "suppressed": -0.809,
+    "single": -0.4045,
+    "vestigial": -0.5016
+  },
+  {
+    "time": 0.41,
+    "message": -0.8443,
+    "carrier": 0.809,
+    "modulated": 0.3309,
+    "suppressed": -0.6831,
+    "single": -0.499,
+    "vestigial": -0.5432
+  },
+  {
+    "time": 0.42,
+    "message": -0.8763,
+    "carrier": 0.309,
+    "modulated": 0.1195,
+    "suppressed": -0.2708,
+    "single": -0.3645,
+    "vestigial": -0.342
+  },
+  {
+    "time": 0.43,
+    "message": -0.9048,
+    "carrier": -0.309,
+    "modulated": -0.1133,
+    "suppressed": 0.2796,
+    "single": -0.0627,
+    "vestigial": 0.0195
+  },
+  {
+    "time": 0.44,
+    "message": -0.9298,
+    "carrier": -0.809,
+    "modulated": -0.2825,
+    "suppressed": 0.7522,
+    "single": 0.2679,
+    "vestigial": 0.3841
+  },
+  {
+    "time": 0.45,
+    "message": -0.9511,
+    "carrier": -1.0,
+    "modulated": -0.3343,
+    "suppressed": 0.9511,
+    "single": 0.4755,
+    "vestigial": 0.5897
+  },
+  {
+    "time": 0.46,
+    "message": -0.9686,
+    "carrier": -0.809,
+    "modulated": -0.2605,
+    "suppressed": 0.7836,
+    "single": 0.4649,
+    "vestigial": 0.5414
+  },
+  {
+    "time": 0.47,
+    "message": -0.9823,
+    "carrier": -0.309,
+    "modulated": -0.0965,
+    "suppressed": 0.3035,
+    "single": 0.2409,
+    "vestigial": 0.2559
+  },
+  {
+    "time": 0.48,
+    "message": -0.9921,
+    "carrier": 0.309,
+    "modulated": 0.0944,
+    "suppressed": -0.3066,
+    "single": -0.0937,
+    "vestigial": -0.1448
+  },
+  {
+    "time": 0.49,
+    "message": -0.998,
+    "carrier": 0.809,
+    "modulated": 0.2438,
+    "suppressed": -0.8074,
+    "single": -0.3853,
+    "vestigial": -0.4866
+  },
+  {
+    "time": 0.5,
+    "message": -1.0,
+    "carrier": 1.0,
+    "modulated": 0.3,
+    "suppressed": -1.0,
+    "single": -0.5,
+    "vestigial": -0.62
+  },
+  {
+    "time": 0.51,
+    "message": -0.998,
+    "carrier": 0.809,
+    "modulated": 0.2438,
+    "suppressed": -0.8074,
+    "single": -0.3853,
+    "vestigial": -0.4866
+  },
+  {
+    "time": 0.52,
+    "message": -0.9921,
+    "carrier": 0.309,
+    "modulated": 0.0944,
+    "suppressed": -0.3066,
+    "single": -0.0937,
+    "vestigial": -0.1448
+  },
+  {
+    "time": 0.53,
+    "message": -0.9823,
+    "carrier": -0.309,
+    "modulated": -0.0965,
+    "suppressed": 0.3035,
+    "single": 0.2409,
+    "vestigial": 0.2559
+  },
+  {
+    "time": 0.54,
+    "message": -0.9686,
+    "carrier": -0.809,
+    "modulated": -0.2605,
+    "suppressed": 0.7836,
+    "single": 0.4649,
+    "vestigial": 0.5414
+  },
+  {
+    "time": 0.55,
+    "message": -0.9511,
+    "carrier": -1.0,
+    "modulated": -0.3343,
+    "suppressed": 0.9511,
+    "single": 0.4755,
+    "vestigial": 0.5897
+  },
+  {
+    "time": 0.56,
+    "message": -0.9298,
+    "carrier": -0.809,
+    "modulated": -0.2825,
+    "suppressed": 0.7522,
+    "single": 0.2679,
+    "vestigial": 0.3841
+  },
+  {
+    "time": 0.57,
+    "message": -0.9048,
+    "carrier": -0.309,
+    "modulated": -0.1133,
+    "suppressed": 0.2796,
+    "single": -0.0627,
+    "vestigial": 0.0195
+  },
+  {
+    "time": 0.58,
+    "message": -0.8763,
+    "carrier": 0.309,
+    "modulated": 0.1195,
+    "suppressed": -0.2708,
+    "single": -0.3645,
+    "vestigial": -0.342
+  },
+  {
+    "time": 0.59,
+    "message": -0.8443,
+    "carrier": 0.809,
+    "modulated": 0.3309,
+    "suppressed": -0.6831,
+    "single": -0.499,
+    "vestigial": -0.5432
+  },
+  {
+    "time": 0.6,
+    "message": -0.809,
+    "carrier": 1.0,
+    "modulated": 0.4337,
+    "suppressed": -0.809,
+    "single": -0.4045,
+    "vestigial": -0.5016
+  },
+  {
+    "time": 0.61,
+    "message": -0.7705,
+    "carrier": 0.809,
+    "modulated": 0.3727,
+    "suppressed": -0.6234,
+    "single": -0.1243,
+    "vestigial": -0.2441
+  },
+  {
+    "time": 0.62,
+    "message": -0.729,
+    "carrier": 0.309,
+    "modulated": 0.1513,
+    "suppressed": -0.2253,
+    "single": 0.2129,
+    "vestigial": 0.1077
+  },
+  {
+    "time": 0.63,
+    "message": -0.6845,
+    "carrier": -0.309,
+    "modulated": -0.1609,
+    "suppressed": 0.2115,
+    "single": 0.4524,
+    "vestigial": 0.3946
+  },
+  {
+    "time": 0.64,
+    "message": -0.6374,
+    "carrier": -0.809,
+    "modulated": -0.448,
+    "suppressed": 0.5157,
+    "single": 0.4843,
+    "vestigial": 0.4918
+  },
+  {
+    "time": 0.65,
+    "message": -0.5878,
+    "carrier": -1.0,
+    "modulated": -0.5886,
+    "suppressed": 0.5878,
+    "single": 0.2939,
+    "vestigial": 0.3644
+  },
+  {
+    "time": 0.66,
+    "message": -0.5358,
+    "carrier": -0.809,
+    "modulated": -0.5056,
+    "suppressed": 0.4335,
+    "single": -0.0314,
+    "vestigial": 0.0802
+  },
+  {
+    "time": 0.67,
+    "message": -0.4818,
+    "carrier": -0.309,
+    "modulated": -0.2048,
+    "suppressed": 0.1489,
+    "single": -0.3423,
+    "vestigial": -0.2244
+  },
+  {
+    "time": 0.68,
+    "message": -0.4258,
+    "carrier": 0.309,
+    "modulated": 0.2169,
+    "suppressed": -0.1316,
+    "single": -0.4961,
+    "vestigial": -0.4086
+  },
+  {
+    "time": 0.69,
+    "message": -0.3681,
+    "carrier": 0.809,
+    "modulated": 0.6005,
+    "suppressed": -0.2978,
+    "single": -0.4222,
+    "vestigial": -0.3923
+  },
+  {
+    "time": 0.7,
+    "message": -0.309,
+    "carrier": 1.0,
+    "modulated": 0.7837,
+    "suppressed": -0.309,
+    "single": -0.1545,
+    "vestigial": -0.1916
+  },
+  {
+    "time": 0.71,
+    "message": -0.2487,
+    "carrier": 0.809,
+    "modulated": 0.6682,
+    "suppressed": -0.2012,
+    "single": 0.1841,
+    "vestigial": 0.0916
+  },
+  {
+    "time": 0.72,
+    "message": -0.1874,
+    "carrier": 0.309,
+    "modulated": 0.2685,
+    "suppressed": -0.0579,
+    "single": 0.4382,
+    "vestigial": 0.3191
+  },
+  {
+    "time": 0.73,
+    "message": -0.1253,
+    "carrier": -0.309,
+    "modulated": -0.2819,
+    "suppressed": 0.0387,
+    "single": 0.4911,
+    "vestigial": 0.3826
+  },
+  {
+    "time": 0.74,
+    "message": -0.0628,
+    "carrier": -0.809,
+    "modulated": -0.7735,
+    "suppressed": 0.0508,
+    "single": 0.3187,
+    "vestigial": 0.2544
+  },
+  {
+    "time": 0.75,
+    "message": -0.0,
+    "carrier": -1.0,
+    "modulated": -1.0,
+    "suppressed": 0.0,
+    "single": 0.0,
+    "vestigial": 0.0
+  },
+  {
+    "time": 0.76,
+    "message": 0.0628,
+    "carrier": -0.809,
+    "modulated": -0.8446,
+    "suppressed": -0.0508,
+    "single": -0.3187,
+    "vestigial": -0.2544
+  },
+  {
+    "time": 0.77,
+    "message": 0.1253,
+    "carrier": -0.309,
+    "modulated": -0.3361,
+    "suppressed": -0.0387,
+    "single": -0.4911,
+    "vestigial": -0.3826
+  },
+  {
+    "time": 0.78,
+    "message": 0.1874,
+    "carrier": 0.309,
+    "modulated": 0.3495,
+    "suppressed": 0.0579,
+    "single": -0.4382,
+    "vestigial": -0.3191
+  },
+  {
+    "time": 0.79,
+    "message": 0.2487,
+    "carrier": 0.809,
+    "modulated": 0.9499,
+    "suppressed": 0.2012,
+    "single": -0.1841,
+    "vestigial": -0.0916
+  },
+  {
+    "time": 0.8,
+    "message": 0.309,
+    "carrier": 1.0,
+    "modulated": 1.2163,
+    "suppressed": 0.309,
+    "single": 0.1545,
+    "vestigial": 0.1916
+  },
+  {
+    "time": 0.81,
+    "message": 0.3681,
+    "carrier": 0.809,
+    "modulated": 1.0175,
+    "suppressed": 0.2978,
+    "single": 0.4222,
+    "vestigial": 0.3923
+  },
+  {
+    "time": 0.82,
+    "message": 0.4258,
+    "carrier": 0.309,
+    "modulated": 0.4011,
+    "suppressed": 0.1316,
+    "single": 0.4961,
+    "vestigial": 0.4086
+  },
+  {
+    "time": 0.83,
+    "message": 0.4818,
+    "carrier": -0.309,
+    "modulated": -0.4132,
+    "suppressed": -0.1489,
+    "single": 0.3423,
+    "vestigial": 0.2244
+  },
+  {
+    "time": 0.84,
+    "message": 0.5358,
+    "carrier": -0.809,
+    "modulated": -1.1125,
+    "suppressed": -0.4335,
+    "single": 0.0314,
+    "vestigial": -0.0802
+  },
+  {
+    "time": 0.85,
+    "message": 0.5878,
+    "carrier": -1.0,
+    "modulated": -1.4114,
+    "suppressed": -0.5878,
+    "single": -0.2939,
+    "vestigial": -0.3644
+  },
+  {
+    "time": 0.86,
+    "message": 0.6374,
+    "carrier": -0.809,
+    "modulated": -1.17,
+    "suppressed": -0.5157,
+    "single": -0.4843,
+    "vestigial": -0.4918
+  },
+  {
+    "time": 0.87,
+    "message": 0.6845,
+    "carrier": -0.309,
+    "modulated": -0.4571,
+    "suppressed": -0.2115,
+    "single": -0.4524,
+    "vestigial": -0.3946
+  },
+  {
+    "time": 0.88,
+    "message": 0.729,
+    "carrier": 0.309,
+    "modulated": 0.4667,
+    "suppressed": 0.2253,
+    "single": -0.2129,
+    "vestigial": -0.1077
+  },
+  {
+    "time": 0.89,
+    "message": 0.7705,
+    "carrier": 0.809,
+    "modulated": 1.2454,
+    "suppressed": 0.6234,
+    "single": 0.1243,
+    "vestigial": 0.2441
+  },
+  {
+    "time": 0.9,
+    "message": 0.809,
+    "carrier": 1.0,
+    "modulated": 1.5663,
+    "suppressed": 0.809,
+    "single": 0.4045,
+    "vestigial": 0.5016
+  },
+  {
+    "time": 0.91,
+    "message": 0.8443,
+    "carrier": 0.809,
+    "modulated": 1.2872,
+    "suppressed": 0.6831,
+    "single": 0.499,
+    "vestigial": 0.5432
+  },
+  {
+    "time": 0.92,
+    "message": 0.8763,
+    "carrier": 0.309,
+    "modulated": 0.4986,
+    "suppressed": 0.2708,
+    "single": 0.3645,
+    "vestigial": 0.342
+  },
+  {
+    "time": 0.93,
+    "message": 0.9048,
+    "carrier": -0.309,
+    "modulated": -0.5047,
+    "suppressed": -0.2796,
+    "single": 0.0627,
+    "vestigial": -0.0195
+  },
+  {
+    "time": 0.94,
+    "message": 0.9298,
+    "carrier": -0.809,
+    "modulated": -1.3356,
+    "suppressed": -0.7522,
+    "single": -0.2679,
+    "vestigial": -0.3841
+  },
+  {
+    "time": 0.95,
+    "message": 0.9511,
+    "carrier": -1.0,
+    "modulated": -1.6657,
+    "suppressed": -0.9511,
+    "single": -0.4755,
+    "vestigial": -0.5897
+  },
+  {
+    "time": 0.96,
+    "message": 0.9686,
+    "carrier": -0.809,
+    "modulated": -1.3575,
+    "suppressed": -0.7836,
+    "single": -0.4649,
+    "vestigial": -0.5414
+  },
+  {
+    "time": 0.97,
+    "message": 0.9823,
+    "carrier": -0.309,
+    "modulated": -0.5215,
+    "suppressed": -0.3035,
+    "single": -0.2409,
+    "vestigial": -0.2559
+  },
+  {
+    "time": 0.98,
+    "message": 0.9921,
+    "carrier": 0.309,
+    "modulated": 0.5236,
+    "suppressed": 0.3066,
+    "single": 0.0937,
+    "vestigial": 0.1448
+  },
+  {
+    "time": 0.99,
+    "message": 0.998,
+    "carrier": 0.809,
+    "modulated": 1.3742,
+    "suppressed": 0.8074,
+    "single": 0.3853,
+    "vestigial": 0.4866
+  },
+  {
+    "time": 1.0,
+    "message": 1.0,
+    "carrier": 1.0,
+    "modulated": 1.7,
+    "suppressed": 1.0,
+    "single": 0.5,
+    "vestigial": 0.62
+  },
+  {
+    "time": 1.01,
+    "message": 0.998,
+    "carrier": 0.809,
+    "modulated": 1.3742,
+    "suppressed": 0.8074,
+    "single": 0.3853,
+    "vestigial": 0.4866
+  },
+  {
+    "time": 1.02,
+    "message": 0.9921,
+    "carrier": 0.309,
+    "modulated": 0.5236,
+    "suppressed": 0.3066,
+    "single": 0.0937,
+    "vestigial": 0.1448
+  },
+  {
+    "time": 1.03,
+    "message": 0.9823,
+    "carrier": -0.309,
+    "modulated": -0.5215,
+    "suppressed": -0.3035,
+    "single": -0.2409,
+    "vestigial": -0.2559
+  },
+  {
+    "time": 1.04,
+    "message": 0.9686,
+    "carrier": -0.809,
+    "modulated": -1.3575,
+    "suppressed": -0.7836,
+    "single": -0.4649,
+    "vestigial": -0.5414
+  },
+  {
+    "time": 1.05,
+    "message": 0.9511,
+    "carrier": -1.0,
+    "modulated": -1.6657,
+    "suppressed": -0.9511,
+    "single": -0.4755,
+    "vestigial": -0.5897
+  },
+  {
+    "time": 1.06,
+    "message": 0.9298,
+    "carrier": -0.809,
+    "modulated": -1.3356,
+    "suppressed": -0.7522,
+    "single": -0.2679,
+    "vestigial": -0.3841
+  },
+  {
+    "time": 1.07,
+    "message": 0.9048,
+    "carrier": -0.309,
+    "modulated": -0.5047,
+    "suppressed": -0.2796,
+    "single": 0.0627,
+    "vestigial": -0.0195
+  },
+  {
+    "time": 1.08,
+    "message": 0.8763,
+    "carrier": 0.309,
+    "modulated": 0.4986,
+    "suppressed": 0.2708,
+    "single": 0.3645,
+    "vestigial": 0.342
+  },
+  {
+    "time": 1.09,
+    "message": 0.8443,
+    "carrier": 0.809,
+    "modulated": 1.2872,
+    "suppressed": 0.6831,
+    "single": 0.499,
+    "vestigial": 0.5432
+  },
+  {
+    "time": 1.1,
+    "message": 0.809,
+    "carrier": 1.0,
+    "modulated": 1.5663,
+    "suppressed": 0.809,
+    "single": 0.4045,
+    "vestigial": 0.5016
+  },
+  {
+    "time": 1.11,
+    "message": 0.7705,
+    "carrier": 0.809,
+    "modulated": 1.2454,
+    "suppressed": 0.6234,
+    "single": 0.1243,
+    "vestigial": 0.2441
+  },
+  {
+    "time": 1.12,
+    "message": 0.729,
+    "carrier": 0.309,
+    "modulated": 0.4667,
+    "suppressed": 0.2253,
+    "single": -0.2129,
+    "vestigial": -0.1077
+  },
+  {
+    "time": 1.13,
+    "message": 0.6845,
+    "carrier": -0.309,
+    "modulated": -0.4571,
+    "suppressed": -0.2115,
+    "single": -0.4524,
+    "vestigial": -0.3946
+  },
+  {
+    "time": 1.14,
+    "message": 0.6374,
+    "carrier": -0.809,
+    "modulated": -1.17,
+    "suppressed": -0.5157,
+    "single": -0.4843,
+    "vestigial": -0.4918
+  },
+  {
+    "time": 1.15,
+    "message": 0.5878,
+    "carrier": -1.0,
+    "modulated": -1.4114,
+    "suppressed": -0.5878,
+    "single": -0.2939,
+    "vestigial": -0.3644
+  },
+  {
+    "time": 1.16,
+    "message": 0.5358,
+    "carrier": -0.809,
+    "modulated": -1.1125,
+    "suppressed": -0.4335,
+    "single": 0.0314,
+    "vestigial": -0.0802
+  },
+  {
+    "time": 1.17,
+    "message": 0.4818,
+    "carrier": -0.309,
+    "modulated": -0.4132,
+    "suppressed": -0.1489,
+    "single": 0.3423,
+    "vestigial": 0.2244
+  },
+  {
+    "time": 1.18,
+    "message": 0.4258,
+    "carrier": 0.309,
+    "modulated": 0.4011,
+    "suppressed": 0.1316,
+    "single": 0.4961,
+    "vestigial": 0.4086
+  },
+  {
+    "time": 1.19,
+    "message": 0.3681,
+    "carrier": 0.809,
+    "modulated": 1.0175,
+    "suppressed": 0.2978,
+    "single": 0.4222,
+    "vestigial": 0.3923
+  },
+  {
+    "time": 1.2,
+    "message": 0.309,
+    "carrier": 1.0,
+    "modulated": 1.2163,
+    "suppressed": 0.309,
+    "single": 0.1545,
+    "vestigial": 0.1916
+  },
+  {
+    "time": 1.21,
+    "message": 0.2487,
+    "carrier": 0.809,
+    "modulated": 0.9499,
+    "suppressed": 0.2012,
+    "single": -0.1841,
+    "vestigial": -0.0916
+  },
+  {
+    "time": 1.22,
+    "message": 0.1874,
+    "carrier": 0.309,
+    "modulated": 0.3495,
+    "suppressed": 0.0579,
+    "single": -0.4382,
+    "vestigial": -0.3191
+  },
+  {
+    "time": 1.23,
+    "message": 0.1253,
+    "carrier": -0.309,
+    "modulated": -0.3361,
+    "suppressed": -0.0387,
+    "single": -0.4911,
+    "vestigial": -0.3826
+  },
+  {
+    "time": 1.24,
+    "message": 0.0628,
+    "carrier": -0.809,
+    "modulated": -0.8446,
+    "suppressed": -0.0508,
+    "single": -0.3187,
+    "vestigial": -0.2544
+  },
+  {
+    "time": 1.25,
+    "message": 0.0,
+    "carrier": -1.0,
+    "modulated": -1.0,
+    "suppressed": -0.0,
+    "single": -0.0,
+    "vestigial": -0.0
+  },
+  {
+    "time": 1.26,
+    "message": -0.0628,
+    "carrier": -0.809,
+    "modulated": -0.7735,
+    "suppressed": 0.0508,
+    "single": 0.3187,
+    "vestigial": 0.2544
+  },
+  {
+    "time": 1.27,
+    "message": -0.1253,
+    "carrier": -0.309,
+    "modulated": -0.2819,
+    "suppressed": 0.0387,
+    "single": 0.4911,
+    "vestigial": 0.3826
+  },
+  {
+    "time": 1.28,
+    "message": -0.1874,
+    "carrier": 0.309,
+    "modulated": 0.2685,
+    "suppressed": -0.0579,
+    "single": 0.4382,
+    "vestigial": 0.3191
+  },
+  {
+    "time": 1.29,
+    "message": -0.2487,
+    "carrier": 0.809,
+    "modulated": 0.6682,
+    "suppressed": -0.2012,
+    "single": 0.1841,
+    "vestigial": 0.0916
+  },
+  {
+    "time": 1.3,
+    "message": -0.309,
+    "carrier": 1.0,
+    "modulated": 0.7837,
+    "suppressed": -0.309,
+    "single": -0.1545,
+    "vestigial": -0.1916
+  },
+  {
+    "time": 1.31,
+    "message": -0.3681,
+    "carrier": 0.809,
+    "modulated": 0.6005,
+    "suppressed": -0.2978,
+    "single": -0.4222,
+    "vestigial": -0.3923
+  },
+  {
+    "time": 1.32,
+    "message": -0.4258,
+    "carrier": 0.309,
+    "modulated": 0.2169,
+    "suppressed": -0.1316,
+    "single": -0.4961,
+    "vestigial": -0.4086
+  },
+  {
+    "time": 1.33,
+    "message": -0.4818,
+    "carrier": -0.309,
+    "modulated": -0.2048,
+    "suppressed": 0.1489,
+    "single": -0.3423,
+    "vestigial": -0.2244
+  },
+  {
+    "time": 1.34,
+    "message": -0.5358,
+    "carrier": -0.809,
+    "modulated": -0.5056,
+    "suppressed": 0.4335,
+    "single": -0.0314,
+    "vestigial": 0.0802
+  },
+  {
+    "time": 1.35,
+    "message": -0.5878,
+    "carrier": -1.0,
+    "modulated": -0.5886,
+    "suppressed": 0.5878,
+    "single": 0.2939,
+    "vestigial": 0.3644
+  },
+  {
+    "time": 1.36,
+    "message": -0.6374,
+    "carrier": -0.809,
+    "modulated": -0.448,
+    "suppressed": 0.5157,
+    "single": 0.4843,
+    "vestigial": 0.4918
+  },
+  {
+    "time": 1.37,
+    "message": -0.6845,
+    "carrier": -0.309,
+    "modulated": -0.1609,
+    "suppressed": 0.2115,
+    "single": 0.4524,
+    "vestigial": 0.3946
+  },
+  {
+    "time": 1.38,
+    "message": -0.729,
+    "carrier": 0.309,
+    "modulated": 0.1513,
+    "suppressed": -0.2253,
+    "single": 0.2129,
+    "vestigial": 0.1077
+  },
+  {
+    "time": 1.39,
+    "message": -0.7705,
+    "carrier": 0.809,
+    "modulated": 0.3727,
+    "suppressed": -0.6234,
+    "single": -0.1243,
+    "vestigial": -0.2441
+  },
+  {
+    "time": 1.4,
+    "message": -0.809,
+    "carrier": 1.0,
+    "modulated": 0.4337,
+    "suppressed": -0.809,
+    "single": -0.4045,
+    "vestigial": -0.5016
+  },
+  {
+    "time": 1.41,
+    "message": -0.8443,
+    "carrier": 0.809,
+    "modulated": 0.3309,
+    "suppressed": -0.6831,
+    "single": -0.499,
+    "vestigial": -0.5432
+  },
+  {
+    "time": 1.42,
+    "message": -0.8763,
+    "carrier": 0.309,
+    "modulated": 0.1195,
+    "suppressed": -0.2708,
+    "single": -0.3645,
+    "vestigial": -0.342
+  },
+  {
+    "time": 1.43,
+    "message": -0.9048,
+    "carrier": -0.309,
+    "modulated": -0.1133,
+    "suppressed": 0.2796,
+    "single": -0.0627,
+    "vestigial": 0.0195
+  },
+  {
+    "time": 1.44,
+    "message": -0.9298,
+    "carrier": -0.809,
+    "modulated": -0.2825,
+    "suppressed": 0.7522,
+    "single": 0.2679,
+    "vestigial": 0.3841
+  },
+  {
+    "time": 1.45,
+    "message": -0.9511,
+    "carrier": -1.0,
+    "modulated": -0.3343,
+    "suppressed": 0.9511,
+    "single": 0.4755,
+    "vestigial": 0.5897
+  },
+  {
+    "time": 1.46,
+    "message": -0.9686,
+    "carrier": -0.809,
+    "modulated": -0.2605,
+    "suppressed": 0.7836,
+    "single": 0.4649,
+    "vestigial": 0.5414
+  },
+  {
+    "time": 1.47,
+    "message": -0.9823,
+    "carrier": -0.309,
+    "modulated": -0.0965,
+    "suppressed": 0.3035,
+    "single": 0.2409,
+    "vestigial": 0.2559
+  },
+  {
+    "time": 1.48,
+    "message": -0.9921,
+    "carrier": 0.309,
+    "modulated": 0.0944,
+    "suppressed": -0.3066,
+    "single": -0.0937,
+    "vestigial": -0.1448
+  },
+  {
+    "time": 1.49,
+    "message": -0.998,
+    "carrier": 0.809,
+    "modulated": 0.2438,
+    "suppressed": -0.8074,
+    "single": -0.3853,
+    "vestigial": -0.4866
+  },
+  {
+    "time": 1.5,
+    "message": -1.0,
+    "carrier": 1.0,
+    "modulated": 0.3,
+    "suppressed": -1.0,
+    "single": -0.5,
+    "vestigial": -0.62
+  },
+  {
+    "time": 1.51,
+    "message": -0.998,
+    "carrier": 0.809,
+    "modulated": 0.2438,
+    "suppressed": -0.8074,
+    "single": -0.3853,
+    "vestigial": -0.4866
+  },
+  {
+    "time": 1.52,
+    "message": -0.9921,
+    "carrier": 0.309,
+    "modulated": 0.0944,
+    "suppressed": -0.3066,
+    "single": -0.0937,
+    "vestigial": -0.1448
+  },
+  {
+    "time": 1.53,
+    "message": -0.9823,
+    "carrier": -0.309,
+    "modulated": -0.0965,
+    "suppressed": 0.3035,
+    "single": 0.2409,
+    "vestigial": 0.2559
+  },
+  {
+    "time": 1.54,
+    "message": -0.9686,
+    "carrier": -0.809,
+    "modulated": -0.2605,
+    "suppressed": 0.7836,
+    "single": 0.4649,
+    "vestigial": 0.5414
+  },
+  {
+    "time": 1.55,
+    "message": -0.9511,
+    "carrier": -1.0,
+    "modulated": -0.3343,
+    "suppressed": 0.9511,
+    "single": 0.4755,
+    "vestigial": 0.5897
+  },
+  {
+    "time": 1.56,
+    "message": -0.9298,
+    "carrier": -0.809,
+    "modulated": -0.2825,
+    "suppressed": 0.7522,
+    "single": 0.2679,
+    "vestigial": 0.3841
+  },
+  {
+    "time": 1.57,
+    "message": -0.9048,
+    "carrier": -0.309,
+    "modulated": -0.1133,
+    "suppressed": 0.2796,
+    "single": -0.0627,
+    "vestigial": 0.0195
+  },
+  {
+    "time": 1.58,
+    "message": -0.8763,
+    "carrier": 0.309,
+    "modulated": 0.1195,
+    "suppressed": -0.2708,
+    "single": -0.3645,
+    "vestigial": -0.342
+  },
+  {
+    "time": 1.59,
+    "message": -0.8443,
+    "carrier": 0.809,
+    "modulated": 0.3309,
+    "suppressed": -0.6831,
+    "single": -0.499,
+    "vestigial": -0.5432
+  },
+  {
+    "time": 1.6,
+    "message": -0.809,
+    "carrier": 1.0,
+    "modulated": 0.4337,
+    "suppressed": -0.809,
+    "single": -0.4045,
+    "vestigial": -0.5016
+  },
+  {
+    "time": 1.61,
+    "message": -0.7705,
+    "carrier": 0.809,
+    "modulated": 0.3727,
+    "suppressed": -0.6234,
+    "single": -0.1243,
+    "vestigial": -0.2441
+  },
+  {
+    "time": 1.62,
+    "message": -0.729,
+    "carrier": 0.309,
+    "modulated": 0.1513,
+    "suppressed": -0.2253,
+    "single": 0.2129,
+    "vestigial": 0.1077
+  },
+  {
+    "time": 1.63,
+    "message": -0.6845,
+    "carrier": -0.309,
+    "modulated": -0.1609,
+    "suppressed": 0.2115,
+    "single": 0.4524,
+    "vestigial": 0.3946
+  },
+  {
+    "time": 1.64,
+    "message": -0.6374,
+    "carrier": -0.809,
+    "modulated": -0.448,
+    "suppressed": 0.5157,
+    "single": 0.4843,
+    "vestigial": 0.4918
+  },
+  {
+    "time": 1.65,
+    "message": -0.5878,
+    "carrier": -1.0,
+    "modulated": -0.5886,
+    "suppressed": 0.5878,
+    "single": 0.2939,
+    "vestigial": 0.3644
+  },
+  {
+    "time": 1.66,
+    "message": -0.5358,
+    "carrier": -0.809,
+    "modulated": -0.5056,
+    "suppressed": 0.4335,
+    "single": -0.0314,
+    "vestigial": 0.0802
+  },
+  {
+    "time": 1.67,
+    "message": -0.4818,
+    "carrier": -0.309,
+    "modulated": -0.2048,
+    "suppressed": 0.1489,
+    "single": -0.3423,
+    "vestigial": -0.2244
+  },
+  {
+    "time": 1.68,
+    "message": -0.4258,
+    "carrier": 0.309,
+    "modulated": 0.2169,
+    "suppressed": -0.1316,
+    "single": -0.4961,
+    "vestigial": -0.4086
+  },
+  {
+    "time": 1.69,
+    "message": -0.3681,
+    "carrier": 0.809,
+    "modulated": 0.6005,
+    "suppressed": -0.2978,
+    "single": -0.4222,
+    "vestigial": -0.3923
+  },
+  {
+    "time": 1.7,
+    "message": -0.309,
+    "carrier": 1.0,
+    "modulated": 0.7837,
+    "suppressed": -0.309,
+    "single": -0.1545,
+    "vestigial": -0.1916
+  },
+  {
+    "time": 1.71,
+    "message": -0.2487,
+    "carrier": 0.809,
+    "modulated": 0.6682,
+    "suppressed": -0.2012,
+    "single": 0.1841,
+    "vestigial": 0.0916
+  },
+  {
+    "time": 1.72,
+    "message": -0.1874,
+    "carrier": 0.309,
+    "modulated": 0.2685,
+    "suppressed": -0.0579,
+    "single": 0.4382,
+    "vestigial": 0.3191
+  },
+  {
+    "time": 1.73,
+    "message": -0.1253,
+    "carrier": -0.309,
+    "modulated": -0.2819,
+    "suppressed": 0.0387,
+    "single": 0.4911,
+    "vestigial": 0.3826
+  },
+  {
+    "time": 1.74,
+    "message": -0.0628,
+    "carrier": -0.809,
+    "modulated": -0.7735,
+    "suppressed": 0.0508,
+    "single": 0.3187,
+    "vestigial": 0.2544
+  },
+  {
+    "time": 1.75,
+    "message": -0.0,
+    "carrier": -1.0,
+    "modulated": -1.0,
+    "suppressed": 0.0,
+    "single": 0.0,
+    "vestigial": 0.0
+  },
+  {
+    "time": 1.76,
+    "message": 0.0628,
+    "carrier": -0.809,
+    "modulated": -0.8446,
+    "suppressed": -0.0508,
+    "single": -0.3187,
+    "vestigial": -0.2544
+  },
+  {
+    "time": 1.77,
+    "message": 0.1253,
+    "carrier": -0.309,
+    "modulated": -0.3361,
+    "suppressed": -0.0387,
+    "single": -0.4911,
+    "vestigial": -0.3826
+  },
+  {
+    "time": 1.78,
+    "message": 0.1874,
+    "carrier": 0.309,
+    "modulated": 0.3495,
+    "suppressed": 0.0579,
+    "single": -0.4382,
+    "vestigial": -0.3191
+  },
+  {
+    "time": 1.79,
+    "message": 0.2487,
+    "carrier": 0.809,
+    "modulated": 0.9499,
+    "suppressed": 0.2012,
+    "single": -0.1841,
+    "vestigial": -0.0916
+  },
+  {
+    "time": 1.8,
+    "message": 0.309,
+    "carrier": 1.0,
+    "modulated": 1.2163,
+    "suppressed": 0.309,
+    "single": 0.1545,
+    "vestigial": 0.1916
+  },
+  {
+    "time": 1.81,
+    "message": 0.3681,
+    "carrier": 0.809,
+    "modulated": 1.0175,
+    "suppressed": 0.2978,
+    "single": 0.4222,
+    "vestigial": 0.3923
+  },
+  {
+    "time": 1.82,
+    "message": 0.4258,
+    "carrier": 0.309,
+    "modulated": 0.4011,
+    "suppressed": 0.1316,
+    "single": 0.4961,
+    "vestigial": 0.4086
+  },
+  {
+    "time": 1.83,
+    "message": 0.4818,
+    "carrier": -0.309,
+    "modulated": -0.4132,
+    "suppressed": -0.1489,
+    "single": 0.3423,
+    "vestigial": 0.2244
+  },
+  {
+    "time": 1.84,
+    "message": 0.5358,
+    "carrier": -0.809,
+    "modulated": -1.1125,
+    "suppressed": -0.4335,
+    "single": 0.0314,
+    "vestigial": -0.0802
+  },
+  {
+    "time": 1.85,
+    "message": 0.5878,
+    "carrier": -1.0,
+    "modulated": -1.4114,
+    "suppressed": -0.5878,
+    "single": -0.2939,
+    "vestigial": -0.3644
+  },
+  {
+    "time": 1.86,
+    "message": 0.6374,
+    "carrier": -0.809,
+    "modulated": -1.17,
+    "suppressed": -0.5157,
+    "single": -0.4843,
+    "vestigial": -0.4918
+  },
+  {
+    "time": 1.87,
+    "message": 0.6845,
+    "carrier": -0.309,
+    "modulated": -0.4571,
+    "suppressed": -0.2115,
+    "single": -0.4524,
+    "vestigial": -0.3946
+  },
+  {
+    "time": 1.88,
+    "message": 0.729,
+    "carrier": 0.309,
+    "modulated": 0.4667,
+    "suppressed": 0.2253,
+    "single": -0.2129,
+    "vestigial": -0.1077
+  },
+  {
+    "time": 1.89,
+    "message": 0.7705,
+    "carrier": 0.809,
+    "modulated": 1.2454,
+    "suppressed": 0.6234,
+    "single": 0.1243,
+    "vestigial": 0.2441
+  },
+  {
+    "time": 1.9,
+    "message": 0.809,
+    "carrier": 1.0,
+    "modulated": 1.5663,
+    "suppressed": 0.809,
+    "single": 0.4045,
+    "vestigial": 0.5016
+  },
+  {
+    "time": 1.91,
+    "message": 0.8443,
+    "carrier": 0.809,
+    "modulated": 1.2872,
+    "suppressed": 0.6831,
+    "single": 0.499,
+    "vestigial": 0.5432
+  },
+  {
+    "time": 1.92,
+    "message": 0.8763,
+    "carrier": 0.309,
+    "modulated": 0.4986,
+    "suppressed": 0.2708,
+    "single": 0.3645,
+    "vestigial": 0.342
+  },
+  {
+    "time": 1.93,
+    "message": 0.9048,
+    "carrier": -0.309,
+    "modulated": -0.5047,
+    "suppressed": -0.2796,
+    "single": 0.0627,
+    "vestigial": -0.0195
+  },
+  {
+    "time": 1.94,
+    "message": 0.9298,
+    "carrier": -0.809,
+    "modulated": -1.3356,
+    "suppressed": -0.7522,
+    "single": -0.2679,
+    "vestigial": -0.3841
+  },
+  {
+    "time": 1.95,
+    "message": 0.9511,
+    "carrier": -1.0,
+    "modulated": -1.6657,
+    "suppressed": -0.9511,
+    "single": -0.4755,
+    "vestigial": -0.5897
+  },
+  {
+    "time": 1.96,
+    "message": 0.9686,
+    "carrier": -0.809,
+    "modulated": -1.3575,
+    "suppressed": -0.7836,
+    "single": -0.4649,
+    "vestigial": -0.5414
+  },
+  {
+    "time": 1.97,
+    "message": 0.9823,
+    "carrier": -0.309,
+    "modulated": -0.5215,
+    "suppressed": -0.3035,
+    "single": -0.2409,
+    "vestigial": -0.2559
+  },
+  {
+    "time": 1.98,
+    "message": 0.9921,
+    "carrier": 0.309,
+    "modulated": 0.5236,
+    "suppressed": 0.3066,
+    "single": 0.0937,
+    "vestigial": 0.1448
+  },
+  {
+    "time": 1.99,
+    "message": 0.998,
+    "carrier": 0.809,
+    "modulated": 1.3742,
+    "suppressed": 0.8074,
+    "single": 0.3853,
+    "vestigial": 0.4866
+  },
+  {
+    "time": 2.0,
+    "message": 1.0,
+    "carrier": 1.0,
+    "modulated": 1.7,
+    "suppressed": 1.0,
+    "single": 0.5,
+    "vestigial": 0.62
+  },
+  {
+    "time": 2.01,
+    "message": 0.998,
+    "carrier": 0.809,
+    "modulated": 1.3742,
+    "suppressed": 0.8074,
+    "single": 0.3853,
+    "vestigial": 0.4866
+  },
+  {
+    "time": 2.02,
+    "message": 0.9921,
+    "carrier": 0.309,
+    "modulated": 0.5236,
+    "suppressed": 0.3066,
+    "single": 0.0937,
+    "vestigial": 0.1448
+  },
+  {
+    "time": 2.03,
+    "message": 0.9823,
+    "carrier": -0.309,
+    "modulated": -0.5215,
+    "suppressed": -0.3035,
+    "single": -0.2409,
+    "vestigial": -0.2559
+  },
+  {
+    "time": 2.04,
+    "message": 0.9686,
+    "carrier": -0.809,
+    "modulated": -1.3575,
+    "suppressed": -0.7836,
+    "single": -0.4649,
+    "vestigial": -0.5414
+  },
+  {
+    "time": 2.05,
+    "message": 0.9511,
+    "carrier": -1.0,
+    "modulated": -1.6657,
+    "suppressed": -0.9511,
+    "single": -0.4755,
+    "vestigial": -0.5897
+  },
+  {
+    "time": 2.06,
+    "message": 0.9298,
+    "carrier": -0.809,
+    "modulated": -1.3356,
+    "suppressed": -0.7522,
+    "single": -0.2679,
+    "vestigial": -0.3841
+  },
+  {
+    "time": 2.07,
+    "message": 0.9048,
+    "carrier": -0.309,
+    "modulated": -0.5047,
+    "suppressed": -0.2796,
+    "single": 0.0627,
+    "vestigial": -0.0195
+  },
+  {
+    "time": 2.08,
+    "message": 0.8763,
+    "carrier": 0.309,
+    "modulated": 0.4986,
+    "suppressed": 0.2708,
+    "single": 0.3645,
+    "vestigial": 0.342
+  },
+  {
+    "time": 2.09,
+    "message": 0.8443,
+    "carrier": 0.809,
+    "modulated": 1.2872,
+    "suppressed": 0.6831,
+    "single": 0.499,
+    "vestigial": 0.5432
+  },
+  {
+    "time": 2.1,
+    "message": 0.809,
+    "carrier": 1.0,
+    "modulated": 1.5663,
+    "suppressed": 0.809,
+    "single": 0.4045,
+    "vestigial": 0.5016
+  },
+  {
+    "time": 2.11,
+    "message": 0.7705,
+    "carrier": 0.809,
+    "modulated": 1.2454,
+    "suppressed": 0.6234,
+    "single": 0.1243,
+    "vestigial": 0.2441
+  },
+  {
+    "time": 2.12,
+    "message": 0.729,
+    "carrier": 0.309,
+    "modulated": 0.4667,
+    "suppressed": 0.2253,
+    "single": -0.2129,
+    "vestigial": -0.1077
+  },
+  {
+    "time": 2.13,
+    "message": 0.6845,
+    "carrier": -0.309,
+    "modulated": -0.4571,
+    "suppressed": -0.2115,
+    "single": -0.4524,
+    "vestigial": -0.3946
+  },
+  {
+    "time": 2.14,
+    "message": 0.6374,
+    "carrier": -0.809,
+    "modulated": -1.17,
+    "suppressed": -0.5157,
+    "single": -0.4843,
+    "vestigial": -0.4918
+  },
+  {
+    "time": 2.15,
+    "message": 0.5878,
+    "carrier": -1.0,
+    "modulated": -1.4114,
+    "suppressed": -0.5878,
+    "single": -0.2939,
+    "vestigial": -0.3644
+  },
+  {
+    "time": 2.16,
+    "message": 0.5358,
+    "carrier": -0.809,
+    "modulated": -1.1125,
+    "suppressed": -0.4335,
+    "single": 0.0314,
+    "vestigial": -0.0802
+  },
+  {
+    "time": 2.17,
+    "message": 0.4818,
+    "carrier": -0.309,
+    "modulated": -0.4132,
+    "suppressed": -0.1489,
+    "single": 0.3423,
+    "vestigial": 0.2244
+  },
+  {
+    "time": 2.18,
+    "message": 0.4258,
+    "carrier": 0.309,
+    "modulated": 0.4011,
+    "suppressed": 0.1316,
+    "single": 0.4961,
+    "vestigial": 0.4086
+  },
+  {
+    "time": 2.19,
+    "message": 0.3681,
+    "carrier": 0.809,
+    "modulated": 1.0175,
+    "suppressed": 0.2978,
+    "single": 0.4222,
+    "vestigial": 0.3923
+  },
+  {
+    "time": 2.2,
+    "message": 0.309,
+    "carrier": 1.0,
+    "modulated": 1.2163,
+    "suppressed": 0.309,
+    "single": 0.1545,
+    "vestigial": 0.1916
+  },
+  {
+    "time": 2.21,
+    "message": 0.2487,
+    "carrier": 0.809,
+    "modulated": 0.9499,
+    "suppressed": 0.2012,
+    "single": -0.1841,
+    "vestigial": -0.0916
+  },
+  {
+    "time": 2.22,
+    "message": 0.1874,
+    "carrier": 0.309,
+    "modulated": 0.3495,
+    "suppressed": 0.0579,
+    "single": -0.4382,
+    "vestigial": -0.3191
+  },
+  {
+    "time": 2.23,
+    "message": 0.1253,
+    "carrier": -0.309,
+    "modulated": -0.3361,
+    "suppressed": -0.0387,
+    "single": -0.4911,
+    "vestigial": -0.3826
+  },
+  {
+    "time": 2.24,
+    "message": 0.0628,
+    "carrier": -0.809,
+    "modulated": -0.8446,
+    "suppressed": -0.0508,
+    "single": -0.3187,
+    "vestigial": -0.2544
+  },
+  {
+    "time": 2.25,
+    "message": 0.0,
+    "carrier": -1.0,
+    "modulated": -1.0,
+    "suppressed": -0.0,
+    "single": -0.0,
+    "vestigial": -0.0
+  },
+  {
+    "time": 2.26,
+    "message": -0.0628,
+    "carrier": -0.809,
+    "modulated": -0.7735,
+    "suppressed": 0.0508,
+    "single": 0.3187,
+    "vestigial": 0.2544
+  },
+  {
+    "time": 2.27,
+    "message": -0.1253,
+    "carrier": -0.309,
+    "modulated": -0.2819,
+    "suppressed": 0.0387,
+    "single": 0.4911,
+    "vestigial": 0.3826
+  },
+  {
+    "time": 2.28,
+    "message": -0.1874,
+    "carrier": 0.309,
+    "modulated": 0.2685,
+    "suppressed": -0.0579,
+    "single": 0.4382,
+    "vestigial": 0.3191
+  },
+  {
+    "time": 2.29,
+    "message": -0.2487,
+    "carrier": 0.809,
+    "modulated": 0.6682,
+    "suppressed": -0.2012,
+    "single": 0.1841,
+    "vestigial": 0.0916
+  },
+  {
+    "time": 2.3,
+    "message": -0.309,
+    "carrier": 1.0,
+    "modulated": 0.7837,
+    "suppressed": -0.309,
+    "single": -0.1545,
+    "vestigial": -0.1916
+  },
+  {
+    "time": 2.31,
+    "message": -0.3681,
+    "carrier": 0.809,
+    "modulated": 0.6005,
+    "suppressed": -0.2978,
+    "single": -0.4222,
+    "vestigial": -0.3923
+  },
+  {
+    "time": 2.32,
+    "message": -0.4258,
+    "carrier": 0.309,
+    "modulated": 0.2169,
+    "suppressed": -0.1316,
+    "single": -0.4961,
+    "vestigial": -0.4086
+  },
+  {
+    "time": 2.33,
+    "message": -0.4818,
+    "carrier": -0.309,
+    "modulated": -0.2048,
+    "suppressed": 0.1489,
+    "single": -0.3423,
+    "vestigial": -0.2244
+  },
+  {
+    "time": 2.34,
+    "message": -0.5358,
+    "carrier": -0.809,
+    "modulated": -0.5056,
+    "suppressed": 0.4335,
+    "single": -0.0314,
+    "vestigial": 0.0802
+  },
+  {
+    "time": 2.35,
+    "message": -0.5878,
+    "carrier": -1.0,
+    "modulated": -0.5886,
+    "suppressed": 0.5878,
+    "single": 0.2939,
+    "vestigial": 0.3644
+  },
+  {
+    "time": 2.36,
+    "message": -0.6374,
+    "carrier": -0.809,
+    "modulated": -0.448,
+    "suppressed": 0.5157,
+    "single": 0.4843,
+    "vestigial": 0.4918
+  },
+  {
+    "time": 2.37,
+    "message": -0.6845,
+    "carrier": -0.309,
+    "modulated": -0.1609,
+    "suppressed": 0.2115,
+    "single": 0.4524,
+    "vestigial": 0.3946
+  },
+  {
+    "time": 2.38,
+    "message": -0.729,
+    "carrier": 0.309,
+    "modulated": 0.1513,
+    "suppressed": -0.2253,
+    "single": 0.2129,
+    "vestigial": 0.1077
+  },
+  {
+    "time": 2.39,
+    "message": -0.7705,
+    "carrier": 0.809,
+    "modulated": 0.3727,
+    "suppressed": -0.6234,
+    "single": -0.1243,
+    "vestigial": -0.2441
+  },
+  {
+    "time": 2.4,
+    "message": -0.809,
+    "carrier": 1.0,
+    "modulated": 0.4337,
+    "suppressed": -0.809,
+    "single": -0.4045,
+    "vestigial": -0.5016
+  },
+  {
+    "time": 2.41,
+    "message": -0.8443,
+    "carrier": 0.809,
+    "modulated": 0.3309,
+    "suppressed": -0.6831,
+    "single": -0.499,
+    "vestigial": -0.5432
+  },
+  {
+    "time": 2.42,
+    "message": -0.8763,
+    "carrier": 0.309,
+    "modulated": 0.1195,
+    "suppressed": -0.2708,
+    "single": -0.3645,
+    "vestigial": -0.342
+  },
+  {
+    "time": 2.43,
+    "message": -0.9048,
+    "carrier": -0.309,
+    "modulated": -0.1133,
+    "suppressed": 0.2796,
+    "single": -0.0627,
+    "vestigial": 0.0195
+  },
+  {
+    "time": 2.44,
+    "message": -0.9298,
+    "carrier": -0.809,
+    "modulated": -0.2825,
+    "suppressed": 0.7522,
+    "single": 0.2679,
+    "vestigial": 0.3841
+  },
+  {
+    "time": 2.45,
+    "message": -0.9511,
+    "carrier": -1.0,
+    "modulated": -0.3343,
+    "suppressed": 0.9511,
+    "single": 0.4755,
+    "vestigial": 0.5897
+  },
+  {
+    "time": 2.46,
+    "message": -0.9686,
+    "carrier": -0.809,
+    "modulated": -0.2605,
+    "suppressed": 0.7836,
+    "single": 0.4649,
+    "vestigial": 0.5414
+  },
+  {
+    "time": 2.47,
+    "message": -0.9823,
+    "carrier": -0.309,
+    "modulated": -0.0965,
+    "suppressed": 0.3035,
+    "single": 0.2409,
+    "vestigial": 0.2559
+  },
+  {
+    "time": 2.48,
+    "message": -0.9921,
+    "carrier": 0.309,
+    "modulated": 0.0944,
+    "suppressed": -0.3066,
+    "single": -0.0937,
+    "vestigial": -0.1448
+  },
+  {
+    "time": 2.49,
+    "message": -0.998,
+    "carrier": 0.809,
+    "modulated": 0.2438,
+    "suppressed": -0.8074,
+    "single": -0.3853,
+    "vestigial": -0.4866
+  },
+  {
+    "time": 2.5,
+    "message": -1.0,
+    "carrier": 1.0,
+    "modulated": 0.3,
+    "suppressed": -1.0,
+    "single": -0.5,
+    "vestigial": -0.62
+  },
+  {
+    "time": 2.51,
+    "message": -0.998,
+    "carrier": 0.809,
+    "modulated": 0.2438,
+    "suppressed": -0.8074,
+    "single": -0.3853,
+    "vestigial": -0.4866
+  },
+  {
+    "time": 2.52,
+    "message": -0.9921,
+    "carrier": 0.309,
+    "modulated": 0.0944,
+    "suppressed": -0.3066,
+    "single": -0.0937,
+    "vestigial": -0.1448
+  },
+  {
+    "time": 2.53,
+    "message": -0.9823,
+    "carrier": -0.309,
+    "modulated": -0.0965,
+    "suppressed": 0.3035,
+    "single": 0.2409,
+    "vestigial": 0.2559
+  },
+  {
+    "time": 2.54,
+    "message": -0.9686,
+    "carrier": -0.809,
+    "modulated": -0.2605,
+    "suppressed": 0.7836,
+    "single": 0.4649,
+    "vestigial": 0.5414
+  },
+  {
+    "time": 2.55,
+    "message": -0.9511,
+    "carrier": -1.0,
+    "modulated": -0.3343,
+    "suppressed": 0.9511,
+    "single": 0.4755,
+    "vestigial": 0.5897
+  },
+  {
+    "time": 2.56,
+    "message": -0.9298,
+    "carrier": -0.809,
+    "modulated": -0.2825,
+    "suppressed": 0.7522,
+    "single": 0.2679,
+    "vestigial": 0.3841
+  },
+  {
+    "time": 2.57,
+    "message": -0.9048,
+    "carrier": -0.309,
+    "modulated": -0.1133,
+    "suppressed": 0.2796,
+    "single": -0.0627,
+    "vestigial": 0.0195
+  },
+  {
+    "time": 2.58,
+    "message": -0.8763,
+    "carrier": 0.309,
+    "modulated": 0.1195,
+    "suppressed": -0.2708,
+    "single": -0.3645,
+    "vestigial": -0.342
+  },
+  {
+    "time": 2.59,
+    "message": -0.8443,
+    "carrier": 0.809,
+    "modulated": 0.3309,
+    "suppressed": -0.6831,
+    "single": -0.499,
+    "vestigial": -0.5432
+  },
+  {
+    "time": 2.6,
+    "message": -0.809,
+    "carrier": 1.0,
+    "modulated": 0.4337,
+    "suppressed": -0.809,
+    "single": -0.4045,
+    "vestigial": -0.5016
+  },
+  {
+    "time": 2.61,
+    "message": -0.7705,
+    "carrier": 0.809,
+    "modulated": 0.3727,
+    "suppressed": -0.6234,
+    "single": -0.1243,
+    "vestigial": -0.2441
+  },
+  {
+    "time": 2.62,
+    "message": -0.729,
+    "carrier": 0.309,
+    "modulated": 0.1513,
+    "suppressed": -0.2253,
+    "single": 0.2129,
+    "vestigial": 0.1077
+  },
+  {
+    "time": 2.63,
+    "message": -0.6845,
+    "carrier": -0.309,
+    "modulated": -0.1609,
+    "suppressed": 0.2115,
+    "single": 0.4524,
+    "vestigial": 0.3946
+  },
+  {
+    "time": 2.64,
+    "message": -0.6374,
+    "carrier": -0.809,
+    "modulated": -0.448,
+    "suppressed": 0.5157,
+    "single": 0.4843,
+    "vestigial": 0.4918
+  },
+  {
+    "time": 2.65,
+    "message": -0.5878,
+    "carrier": -1.0,
+    "modulated": -0.5886,
+    "suppressed": 0.5878,
+    "single": 0.2939,
+    "vestigial": 0.3644
+  },
+  {
+    "time": 2.66,
+    "message": -0.5358,
+    "carrier": -0.809,
+    "modulated": -0.5056,
+    "suppressed": 0.4335,
+    "single": -0.0314,
+    "vestigial": 0.0802
+  },
+  {
+    "time": 2.67,
+    "message": -0.4818,
+    "carrier": -0.309,
+    "modulated": -0.2048,
+    "suppressed": 0.1489,
+    "single": -0.3423,
+    "vestigial": -0.2244
+  },
+  {
+    "time": 2.68,
+    "message": -0.4258,
+    "carrier": 0.309,
+    "modulated": 0.2169,
+    "suppressed": -0.1316,
+    "single": -0.4961,
+    "vestigial": -0.4086
+  },
+  {
+    "time": 2.69,
+    "message": -0.3681,
+    "carrier": 0.809,
+    "modulated": 0.6005,
+    "suppressed": -0.2978,
+    "single": -0.4222,
+    "vestigial": -0.3923
+  },
+  {
+    "time": 2.7,
+    "message": -0.309,
+    "carrier": 1.0,
+    "modulated": 0.7837,
+    "suppressed": -0.309,
+    "single": -0.1545,
+    "vestigial": -0.1916
+  },
+  {
+    "time": 2.71,
+    "message": -0.2487,
+    "carrier": 0.809,
+    "modulated": 0.6682,
+    "suppressed": -0.2012,
+    "single": 0.1841,
+    "vestigial": 0.0916
+  },
+  {
+    "time": 2.72,
+    "message": -0.1874,
+    "carrier": 0.309,
+    "modulated": 0.2685,
+    "suppressed": -0.0579,
+    "single": 0.4382,
+    "vestigial": 0.3191
+  },
+  {
+    "time": 2.73,
+    "message": -0.1253,
+    "carrier": -0.309,
+    "modulated": -0.2819,
+    "suppressed": 0.0387,
+    "single": 0.4911,
+    "vestigial": 0.3826
+  },
+  {
+    "time": 2.74,
+    "message": -0.0628,
+    "carrier": -0.809,
+    "modulated": -0.7735,
+    "suppressed": 0.0508,
+    "single": 0.3187,
+    "vestigial": 0.2544
+  },
+  {
+    "time": 2.75,
+    "message": -0.0,
+    "carrier": -1.0,
+    "modulated": -1.0,
+    "suppressed": 0.0,
+    "single": 0.0,
+    "vestigial": 0.0
+  },
+  {
+    "time": 2.76,
+    "message": 0.0628,
+    "carrier": -0.809,
+    "modulated": -0.8446,
+    "suppressed": -0.0508,
+    "single": -0.3187,
+    "vestigial": -0.2544
+  },
+  {
+    "time": 2.77,
+    "message": 0.1253,
+    "carrier": -0.309,
+    "modulated": -0.3361,
+    "suppressed": -0.0387,
+    "single": -0.4911,
+    "vestigial": -0.3826
+  },
+  {
+    "time": 2.78,
+    "message": 0.1874,
+    "carrier": 0.309,
+    "modulated": 0.3495,
+    "suppressed": 0.0579,
+    "single": -0.4382,
+    "vestigial": -0.3191
+  },
+  {
+    "time": 2.79,
+    "message": 0.2487,
+    "carrier": 0.809,
+    "modulated": 0.9499,
+    "suppressed": 0.2012,
+    "single": -0.1841,
+    "vestigial": -0.0916
+  },
+  {
+    "time": 2.8,
+    "message": 0.309,
+    "carrier": 1.0,
+    "modulated": 1.2163,
+    "suppressed": 0.309,
+    "single": 0.1545,
+    "vestigial": 0.1916
+  },
+  {
+    "time": 2.81,
+    "message": 0.3681,
+    "carrier": 0.809,
+    "modulated": 1.0175,
+    "suppressed": 0.2978,
+    "single": 0.4222,
+    "vestigial": 0.3923
+  },
+  {
+    "time": 2.82,
+    "message": 0.4258,
+    "carrier": 0.309,
+    "modulated": 0.4011,
+    "suppressed": 0.1316,
+    "single": 0.4961,
+    "vestigial": 0.4086
+  },
+  {
+    "time": 2.83,
+    "message": 0.4818,
+    "carrier": -0.309,
+    "modulated": -0.4132,
+    "suppressed": -0.1489,
+    "single": 0.3423,
+    "vestigial": 0.2244
+  },
+  {
+    "time": 2.84,
+    "message": 0.5358,
+    "carrier": -0.809,
+    "modulated": -1.1125,
+    "suppressed": -0.4335,
+    "single": 0.0314,
+    "vestigial": -0.0802
+  },
+  {
+    "time": 2.85,
+    "message": 0.5878,
+    "carrier": -1.0,
+    "modulated": -1.4114,
+    "suppressed": -0.5878,
+    "single": -0.2939,
+    "vestigial": -0.3644
+  },
+  {
+    "time": 2.86,
+    "message": 0.6374,
+    "carrier": -0.809,
+    "modulated": -1.17,
+    "suppressed": -0.5157,
+    "single": -0.4843,
+    "vestigial": -0.4918
+  },
+  {
+    "time": 2.87,
+    "message": 0.6845,
+    "carrier": -0.309,
+    "modulated": -0.4571,
+    "suppressed": -0.2115,
+    "single": -0.4524,
+    "vestigial": -0.3946
+  },
+  {
+    "time": 2.88,
+    "message": 0.729,
+    "carrier": 0.309,
+    "modulated": 0.4667,
+    "suppressed": 0.2253,
+    "single": -0.2129,
+    "vestigial": -0.1077
+  },
+  {
+    "time": 2.89,
+    "message": 0.7705,
+    "carrier": 0.809,
+    "modulated": 1.2454,
+    "suppressed": 0.6234,
+    "single": 0.1243,
+    "vestigial": 0.2441
+  },
+  {
+    "time": 2.9,
+    "message": 0.809,
+    "carrier": 1.0,
+    "modulated": 1.5663,
+    "suppressed": 0.809,
+    "single": 0.4045,
+    "vestigial": 0.5016
+  },
+  {
+    "time": 2.91,
+    "message": 0.8443,
+    "carrier": 0.809,
+    "modulated": 1.2872,
+    "suppressed": 0.6831,
+    "single": 0.499,
+    "vestigial": 0.5432
+  },
+  {
+    "time": 2.92,
+    "message": 0.8763,
+    "carrier": 0.309,
+    "modulated": 0.4986,
+    "suppressed": 0.2708,
+    "single": 0.3645,
+    "vestigial": 0.342
+  },
+  {
+    "time": 2.93,
+    "message": 0.9048,
+    "carrier": -0.309,
+    "modulated": -0.5047,
+    "suppressed": -0.2796,
+    "single": 0.0627,
+    "vestigial": -0.0195
+  },
+  {
+    "time": 2.94,
+    "message": 0.9298,
+    "carrier": -0.809,
+    "modulated": -1.3356,
+    "suppressed": -0.7522,
+    "single": -0.2679,
+    "vestigial": -0.3841
+  },
+  {
+    "time": 2.95,
+    "message": 0.9511,
+    "carrier": -1.0,
+    "modulated": -1.6657,
+    "suppressed": -0.9511,
+    "single": -0.4755,
+    "vestigial": -0.5897
+  },
+  {
+    "time": 2.96,
+    "message": 0.9686,
+    "carrier": -0.809,
+    "modulated": -1.3575,
+    "suppressed": -0.7836,
+    "single": -0.4649,
+    "vestigial": -0.5414
+  },
+  {
+    "time": 2.97,
+    "message": 0.9823,
+    "carrier": -0.309,
+    "modulated": -0.5215,
+    "suppressed": -0.3035,
+    "single": -0.2409,
+    "vestigial": -0.2559
+  },
+  {
+    "time": 2.98,
+    "message": 0.9921,
+    "carrier": 0.309,
+    "modulated": 0.5236,
+    "suppressed": 0.3066,
+    "single": 0.0937,
+    "vestigial": 0.1448
+  },
+  {
+    "time": 2.99,
+    "message": 0.998,
+    "carrier": 0.809,
+    "modulated": 1.3742,
+    "suppressed": 0.8074,
+    "single": 0.3853,
+    "vestigial": 0.4866
+  },
+  {
+    "time": 3.0,
+    "message": 1.0,
+    "carrier": 1.0,
+    "modulated": 1.7,
+    "suppressed": 1.0,
+    "single": 0.5,
+    "vestigial": 0.62
+  },
+  {
+    "time": 3.01,
+    "message": 0.998,
+    "carrier": 0.809,
+    "modulated": 1.3742,
+    "suppressed": 0.8074,
+    "single": 0.3853,
+    "vestigial": 0.4866
+  },
+  {
+    "time": 3.02,
+    "message": 0.9921,
+    "carrier": 0.309,
+    "modulated": 0.5236,
+    "suppressed": 0.3066,
+    "single": 0.0937,
+    "vestigial": 0.1448
+  },
+  {
+    "time": 3.03,
+    "message": 0.9823,
+    "carrier": -0.309,
+    "modulated": -0.5215,
+    "suppressed": -0.3035,
+    "single": -0.2409,
+    "vestigial": -0.2559
+  },
+  {
+    "time": 3.04,
+    "message": 0.9686,
+    "carrier": -0.809,
+    "modulated": -1.3575,
+    "suppressed": -0.7836,
+    "single": -0.4649,
+    "vestigial": -0.5414
+  },
+  {
+    "time": 3.05,
+    "message": 0.9511,
+    "carrier": -1.0,
+    "modulated": -1.6657,
+    "suppressed": -0.9511,
+    "single": -0.4755,
+    "vestigial": -0.5897
+  },
+  {
+    "time": 3.06,
+    "message": 0.9298,
+    "carrier": -0.809,
+    "modulated": -1.3356,
+    "suppressed": -0.7522,
+    "single": -0.2679,
+    "vestigial": -0.3841
+  },
+  {
+    "time": 3.07,
+    "message": 0.9048,
+    "carrier": -0.309,
+    "modulated": -0.5047,
+    "suppressed": -0.2796,
+    "single": 0.0627,
+    "vestigial": -0.0195
+  },
+  {
+    "time": 3.08,
+    "message": 0.8763,
+    "carrier": 0.309,
+    "modulated": 0.4986,
+    "suppressed": 0.2708,
+    "single": 0.3645,
+    "vestigial": 0.342
+  },
+  {
+    "time": 3.09,
+    "message": 0.8443,
+    "carrier": 0.809,
+    "modulated": 1.2872,
+    "suppressed": 0.6831,
+    "single": 0.499,
+    "vestigial": 0.5432
+  },
+  {
+    "time": 3.1,
+    "message": 0.809,
+    "carrier": 1.0,
+    "modulated": 1.5663,
+    "suppressed": 0.809,
+    "single": 0.4045,
+    "vestigial": 0.5016
+  },
+  {
+    "time": 3.11,
+    "message": 0.7705,
+    "carrier": 0.809,
+    "modulated": 1.2454,
+    "suppressed": 0.6234,
+    "single": 0.1243,
+    "vestigial": 0.2441
+  },
+  {
+    "time": 3.12,
+    "message": 0.729,
+    "carrier": 0.309,
+    "modulated": 0.4667,
+    "suppressed": 0.2253,
+    "single": -0.2129,
+    "vestigial": -0.1077
+  },
+  {
+    "time": 3.13,
+    "message": 0.6845,
+    "carrier": -0.309,
+    "modulated": -0.4571,
+    "suppressed": -0.2115,
+    "single": -0.4524,
+    "vestigial": -0.3946
+  },
+  {
+    "time": 3.14,
+    "message": 0.6374,
+    "carrier": -0.809,
+    "modulated": -1.17,
+    "suppressed": -0.5157,
+    "single": -0.4843,
+    "vestigial": -0.4918
+  },
+  {
+    "time": 3.15,
+    "message": 0.5878,
+    "carrier": -1.0,
+    "modulated": -1.4114,
+    "suppressed": -0.5878,
+    "single": -0.2939,
+    "vestigial": -0.3644
+  },
+  {
+    "time": 3.16,
+    "message": 0.5358,
+    "carrier": -0.809,
+    "modulated": -1.1125,
+    "suppressed": -0.4335,
+    "single": 0.0314,
+    "vestigial": -0.0802
+  },
+  {
+    "time": 3.17,
+    "message": 0.4818,
+    "carrier": -0.309,
+    "modulated": -0.4132,
+    "suppressed": -0.1489,
+    "single": 0.3423,
+    "vestigial": 0.2244
+  },
+  {
+    "time": 3.18,
+    "message": 0.4258,
+    "carrier": 0.309,
+    "modulated": 0.4011,
+    "suppressed": 0.1316,
+    "single": 0.4961,
+    "vestigial": 0.4086
+  },
+  {
+    "time": 3.19,
+    "message": 0.3681,
+    "carrier": 0.809,
+    "modulated": 1.0175,
+    "suppressed": 0.2978,
+    "single": 0.4222,
+    "vestigial": 0.3923
+  },
+  {
+    "time": 3.2,
+    "message": 0.309,
+    "carrier": 1.0,
+    "modulated": 1.2163,
+    "suppressed": 0.309,
+    "single": 0.1545,
+    "vestigial": 0.1916
+  },
+  {
+    "time": 3.21,
+    "message": 0.2487,
+    "carrier": 0.809,
+    "modulated": 0.9499,
+    "suppressed": 0.2012,
+    "single": -0.1841,
+    "vestigial": -0.0916
+  },
+  {
+    "time": 3.22,
+    "message": 0.1874,
+    "carrier": 0.309,
+    "modulated": 0.3495,
+    "suppressed": 0.0579,
+    "single": -0.4382,
+    "vestigial": -0.3191
+  },
+  {
+    "time": 3.23,
+    "message": 0.1253,
+    "carrier": -0.309,
+    "modulated": -0.3361,
+    "suppressed": -0.0387,
+    "single": -0.4911,
+    "vestigial": -0.3826
+  },
+  {
+    "time": 3.24,
+    "message": 0.0628,
+    "carrier": -0.809,
+    "modulated": -0.8446,
+    "suppressed": -0.0508,
+    "single": -0.3187,
+    "vestigial": -0.2544
+  },
+  {
+    "time": 3.25,
+    "message": -0.0,
+    "carrier": -1.0,
+    "modulated": -1.0,
+    "suppressed": 0.0,
+    "single": -0.0,
+    "vestigial": -0.0
+  },
+  {
+    "time": 3.26,
+    "message": -0.0628,
+    "carrier": -0.809,
+    "modulated": -0.7735,
+    "suppressed": 0.0508,
+    "single": 0.3187,
+    "vestigial": 0.2544
+  },
+  {
+    "time": 3.27,
+    "message": -0.1253,
+    "carrier": -0.309,
+    "modulated": -0.2819,
+    "suppressed": 0.0387,
+    "single": 0.4911,
+    "vestigial": 0.3826
+  },
+  {
+    "time": 3.28,
+    "message": -0.1874,
+    "carrier": 0.309,
+    "modulated": 0.2685,
+    "suppressed": -0.0579,
+    "single": 0.4382,
+    "vestigial": 0.3191
+  },
+  {
+    "time": 3.29,
+    "message": -0.2487,
+    "carrier": 0.809,
+    "modulated": 0.6682,
+    "suppressed": -0.2012,
+    "single": 0.1841,
+    "vestigial": 0.0916
+  },
+  {
+    "time": 3.3,
+    "message": -0.309,
+    "carrier": 1.0,
+    "modulated": 0.7837,
+    "suppressed": -0.309,
+    "single": -0.1545,
+    "vestigial": -0.1916
+  },
+  {
+    "time": 3.31,
+    "message": -0.3681,
+    "carrier": 0.809,
+    "modulated": 0.6005,
+    "suppressed": -0.2978,
+    "single": -0.4222,
+    "vestigial": -0.3923
+  },
+  {
+    "time": 3.32,
+    "message": -0.4258,
+    "carrier": 0.309,
+    "modulated": 0.2169,
+    "suppressed": -0.1316,
+    "single": -0.4961,
+    "vestigial": -0.4086
+  },
+  {
+    "time": 3.33,
+    "message": -0.4818,
+    "carrier": -0.309,
+    "modulated": -0.2048,
+    "suppressed": 0.1489,
+    "single": -0.3423,
+    "vestigial": -0.2244
+  },
+  {
+    "time": 3.34,
+    "message": -0.5358,
+    "carrier": -0.809,
+    "modulated": -0.5056,
+    "suppressed": 0.4335,
+    "single": -0.0314,
+    "vestigial": 0.0802
+  },
+  {
+    "time": 3.35,
+    "message": -0.5878,
+    "carrier": -1.0,
+    "modulated": -0.5886,
+    "suppressed": 0.5878,
+    "single": 0.2939,
+    "vestigial": 0.3644
+  },
+  {
+    "time": 3.36,
+    "message": -0.6374,
+    "carrier": -0.809,
+    "modulated": -0.448,
+    "suppressed": 0.5157,
+    "single": 0.4843,
+    "vestigial": 0.4918
+  },
+  {
+    "time": 3.37,
+    "message": -0.6845,
+    "carrier": -0.309,
+    "modulated": -0.1609,
+    "suppressed": 0.2115,
+    "single": 0.4524,
+    "vestigial": 0.3946
+  },
+  {
+    "time": 3.38,
+    "message": -0.729,
+    "carrier": 0.309,
+    "modulated": 0.1513,
+    "suppressed": -0.2253,
+    "single": 0.2129,
+    "vestigial": 0.1077
+  },
+  {
+    "time": 3.39,
+    "message": -0.7705,
+    "carrier": 0.809,
+    "modulated": 0.3727,
+    "suppressed": -0.6234,
+    "single": -0.1243,
+    "vestigial": -0.2441
+  },
+  {
+    "time": 3.4,
+    "message": -0.809,
+    "carrier": 1.0,
+    "modulated": 0.4337,
+    "suppressed": -0.809,
+    "single": -0.4045,
+    "vestigial": -0.5016
+  },
+  {
+    "time": 3.41,
+    "message": -0.8443,
+    "carrier": 0.809,
+    "modulated": 0.3309,
+    "suppressed": -0.6831,
+    "single": -0.499,
+    "vestigial": -0.5432
+  },
+  {
+    "time": 3.42,
+    "message": -0.8763,
+    "carrier": 0.309,
+    "modulated": 0.1195,
+    "suppressed": -0.2708,
+    "single": -0.3645,
+    "vestigial": -0.342
+  },
+  {
+    "time": 3.43,
+    "message": -0.9048,
+    "carrier": -0.309,
+    "modulated": -0.1133,
+    "suppressed": 0.2796,
+    "single": -0.0627,
+    "vestigial": 0.0195
+  },
+  {
+    "time": 3.44,
+    "message": -0.9298,
+    "carrier": -0.809,
+    "modulated": -0.2825,
+    "suppressed": 0.7522,
+    "single": 0.2679,
+    "vestigial": 0.3841
+  },
+  {
+    "time": 3.45,
+    "message": -0.9511,
+    "carrier": -1.0,
+    "modulated": -0.3343,
+    "suppressed": 0.9511,
+    "single": 0.4755,
+    "vestigial": 0.5897
+  },
+  {
+    "time": 3.46,
+    "message": -0.9686,
+    "carrier": -0.809,
+    "modulated": -0.2605,
+    "suppressed": 0.7836,
+    "single": 0.4649,
+    "vestigial": 0.5414
+  },
+  {
+    "time": 3.47,
+    "message": -0.9823,
+    "carrier": -0.309,
+    "modulated": -0.0965,
+    "suppressed": 0.3035,
+    "single": 0.2409,
+    "vestigial": 0.2559
+  },
+  {
+    "time": 3.48,
+    "message": -0.9921,
+    "carrier": 0.309,
+    "modulated": 0.0944,
+    "suppressed": -0.3066,
+    "single": -0.0937,
+    "vestigial": -0.1448
+  },
+  {
+    "time": 3.49,
+    "message": -0.998,
+    "carrier": 0.809,
+    "modulated": 0.2438,
+    "suppressed": -0.8074,
+    "single": -0.3853,
+    "vestigial": -0.4866
+  },
+  {
+    "time": 3.5,
+    "message": -1.0,
+    "carrier": 1.0,
+    "modulated": 0.3,
+    "suppressed": -1.0,
+    "single": -0.5,
+    "vestigial": -0.62
+  },
+  {
+    "time": 3.51,
+    "message": -0.998,
+    "carrier": 0.809,
+    "modulated": 0.2438,
+    "suppressed": -0.8074,
+    "single": -0.3853,
+    "vestigial": -0.4866
+  },
+  {
+    "time": 3.52,
+    "message": -0.9921,
+    "carrier": 0.309,
+    "modulated": 0.0944,
+    "suppressed": -0.3066,
+    "single": -0.0937,
+    "vestigial": -0.1448
+  },
+  {
+    "time": 3.53,
+    "message": -0.9823,
+    "carrier": -0.309,
+    "modulated": -0.0965,
+    "suppressed": 0.3035,
+    "single": 0.2409,
+    "vestigial": 0.2559
+  },
+  {
+    "time": 3.54,
+    "message": -0.9686,
+    "carrier": -0.809,
+    "modulated": -0.2605,
+    "suppressed": 0.7836,
+    "single": 0.4649,
+    "vestigial": 0.5414
+  },
+  {
+    "time": 3.55,
+    "message": -0.9511,
+    "carrier": -1.0,
+    "modulated": -0.3343,
+    "suppressed": 0.9511,
+    "single": 0.4755,
+    "vestigial": 0.5897
+  },
+  {
+    "time": 3.56,
+    "message": -0.9298,
+    "carrier": -0.809,
+    "modulated": -0.2825,
+    "suppressed": 0.7522,
+    "single": 0.2679,
+    "vestigial": 0.3841
+  },
+  {
+    "time": 3.57,
+    "message": -0.9048,
+    "carrier": -0.309,
+    "modulated": -0.1133,
+    "suppressed": 0.2796,
+    "single": -0.0627,
+    "vestigial": 0.0195
+  },
+  {
+    "time": 3.58,
+    "message": -0.8763,
+    "carrier": 0.309,
+    "modulated": 0.1195,
+    "suppressed": -0.2708,
+    "single": -0.3645,
+    "vestigial": -0.342
+  },
+  {
+    "time": 3.59,
+    "message": -0.8443,
+    "carrier": 0.809,
+    "modulated": 0.3309,
+    "suppressed": -0.6831,
+    "single": -0.499,
+    "vestigial": -0.5432
+  },
+  {
+    "time": 3.6,
+    "message": -0.809,
+    "carrier": 1.0,
+    "modulated": 0.4337,
+    "suppressed": -0.809,
+    "single": -0.4045,
+    "vestigial": -0.5016
+  },
+  {
+    "time": 3.61,
+    "message": -0.7705,
+    "carrier": 0.809,
+    "modulated": 0.3727,
+    "suppressed": -0.6234,
+    "single": -0.1243,
+    "vestigial": -0.2441
+  },
+  {
+    "time": 3.62,
+    "message": -0.729,
+    "carrier": 0.309,
+    "modulated": 0.1513,
+    "suppressed": -0.2253,
+    "single": 0.2129,
+    "vestigial": 0.1077
+  },
+  {
+    "time": 3.63,
+    "message": -0.6845,
+    "carrier": -0.309,
+    "modulated": -0.1609,
+    "suppressed": 0.2115,
+    "single": 0.4524,
+    "vestigial": 0.3946
+  },
+  {
+    "time": 3.64,
+    "message": -0.6374,
+    "carrier": -0.809,
+    "modulated": -0.448,
+    "suppressed": 0.5157,
+    "single": 0.4843,
+    "vestigial": 0.4918
+  },
+  {
+    "time": 3.65,
+    "message": -0.5878,
+    "carrier": -1.0,
+    "modulated": -0.5886,
+    "suppressed": 0.5878,
+    "single": 0.2939,
+    "vestigial": 0.3644
+  },
+  {
+    "time": 3.66,
+    "message": -0.5358,
+    "carrier": -0.809,
+    "modulated": -0.5056,
+    "suppressed": 0.4335,
+    "single": -0.0314,
+    "vestigial": 0.0802
+  },
+  {
+    "time": 3.67,
+    "message": -0.4818,
+    "carrier": -0.309,
+    "modulated": -0.2048,
+    "suppressed": 0.1489,
+    "single": -0.3423,
+    "vestigial": -0.2244
+  },
+  {
+    "time": 3.68,
+    "message": -0.4258,
+    "carrier": 0.309,
+    "modulated": 0.2169,
+    "suppressed": -0.1316,
+    "single": -0.4961,
+    "vestigial": -0.4086
+  },
+  {
+    "time": 3.69,
+    "message": -0.3681,
+    "carrier": 0.809,
+    "modulated": 0.6005,
+    "suppressed": -0.2978,
+    "single": -0.4222,
+    "vestigial": -0.3923
+  },
+  {
+    "time": 3.7,
+    "message": -0.309,
+    "carrier": 1.0,
+    "modulated": 0.7837,
+    "suppressed": -0.309,
+    "single": -0.1545,
+    "vestigial": -0.1916
+  },
+  {
+    "time": 3.71,
+    "message": -0.2487,
+    "carrier": 0.809,
+    "modulated": 0.6682,
+    "suppressed": -0.2012,
+    "single": 0.1841,
+    "vestigial": 0.0916
+  },
+  {
+    "time": 3.72,
+    "message": -0.1874,
+    "carrier": 0.309,
+    "modulated": 0.2685,
+    "suppressed": -0.0579,
+    "single": 0.4382,
+    "vestigial": 0.3191
+  },
+  {
+    "time": 3.73,
+    "message": -0.1253,
+    "carrier": -0.309,
+    "modulated": -0.2819,
+    "suppressed": 0.0387,
+    "single": 0.4911,
+    "vestigial": 0.3826
+  },
+  {
+    "time": 3.74,
+    "message": -0.0628,
+    "carrier": -0.809,
+    "modulated": -0.7735,
+    "suppressed": 0.0508,
+    "single": 0.3187,
+    "vestigial": 0.2544
+  },
+  {
+    "time": 3.75,
+    "message": -0.0,
+    "carrier": -1.0,
+    "modulated": -1.0,
+    "suppressed": 0.0,
+    "single": 0.0,
+    "vestigial": 0.0
+  },
+  {
+    "time": 3.76,
+    "message": 0.0628,
+    "carrier": -0.809,
+    "modulated": -0.8446,
+    "suppressed": -0.0508,
+    "single": -0.3187,
+    "vestigial": -0.2544
+  },
+  {
+    "time": 3.77,
+    "message": 0.1253,
+    "carrier": -0.309,
+    "modulated": -0.3361,
+    "suppressed": -0.0387,
+    "single": -0.4911,
+    "vestigial": -0.3826
+  },
+  {
+    "time": 3.78,
+    "message": 0.1874,
+    "carrier": 0.309,
+    "modulated": 0.3495,
+    "suppressed": 0.0579,
+    "single": -0.4382,
+    "vestigial": -0.3191
+  },
+  {
+    "time": 3.79,
+    "message": 0.2487,
+    "carrier": 0.809,
+    "modulated": 0.9499,
+    "suppressed": 0.2012,
+    "single": -0.1841,
+    "vestigial": -0.0916
+  },
+  {
+    "time": 3.8,
+    "message": 0.309,
+    "carrier": 1.0,
+    "modulated": 1.2163,
+    "suppressed": 0.309,
+    "single": 0.1545,
+    "vestigial": 0.1916
+  },
+  {
+    "time": 3.81,
+    "message": 0.3681,
+    "carrier": 0.809,
+    "modulated": 1.0175,
+    "suppressed": 0.2978,
+    "single": 0.4222,
+    "vestigial": 0.3923
+  },
+  {
+    "time": 3.82,
+    "message": 0.4258,
+    "carrier": 0.309,
+    "modulated": 0.4011,
+    "suppressed": 0.1316,
+    "single": 0.4961,
+    "vestigial": 0.4086
+  },
+  {
+    "time": 3.83,
+    "message": 0.4818,
+    "carrier": -0.309,
+    "modulated": -0.4132,
+    "suppressed": -0.1489,
+    "single": 0.3423,
+    "vestigial": 0.2244
+  },
+  {
+    "time": 3.84,
+    "message": 0.5358,
+    "carrier": -0.809,
+    "modulated": -1.1125,
+    "suppressed": -0.4335,
+    "single": 0.0314,
+    "vestigial": -0.0802
+  },
+  {
+    "time": 3.85,
+    "message": 0.5878,
+    "carrier": -1.0,
+    "modulated": -1.4114,
+    "suppressed": -0.5878,
+    "single": -0.2939,
+    "vestigial": -0.3644
+  },
+  {
+    "time": 3.86,
+    "message": 0.6374,
+    "carrier": -0.809,
+    "modulated": -1.17,
+    "suppressed": -0.5157,
+    "single": -0.4843,
+    "vestigial": -0.4918
+  },
+  {
+    "time": 3.87,
+    "message": 0.6845,
+    "carrier": -0.309,
+    "modulated": -0.4571,
+    "suppressed": -0.2115,
+    "single": -0.4524,
+    "vestigial": -0.3946
+  },
+  {
+    "time": 3.88,
+    "message": 0.729,
+    "carrier": 0.309,
+    "modulated": 0.4667,
+    "suppressed": 0.2253,
+    "single": -0.2129,
+    "vestigial": -0.1077
+  },
+  {
+    "time": 3.89,
+    "message": 0.7705,
+    "carrier": 0.809,
+    "modulated": 1.2454,
+    "suppressed": 0.6234,
+    "single": 0.1243,
+    "vestigial": 0.2441
+  },
+  {
+    "time": 3.9,
+    "message": 0.809,
+    "carrier": 1.0,
+    "modulated": 1.5663,
+    "suppressed": 0.809,
+    "single": 0.4045,
+    "vestigial": 0.5016
+  },
+  {
+    "time": 3.91,
+    "message": 0.8443,
+    "carrier": 0.809,
+    "modulated": 1.2872,
+    "suppressed": 0.6831,
+    "single": 0.499,
+    "vestigial": 0.5432
+  },
+  {
+    "time": 3.92,
+    "message": 0.8763,
+    "carrier": 0.309,
+    "modulated": 0.4986,
+    "suppressed": 0.2708,
+    "single": 0.3645,
+    "vestigial": 0.342
+  },
+  {
+    "time": 3.93,
+    "message": 0.9048,
+    "carrier": -0.309,
+    "modulated": -0.5047,
+    "suppressed": -0.2796,
+    "single": 0.0627,
+    "vestigial": -0.0195
+  },
+  {
+    "time": 3.94,
+    "message": 0.9298,
+    "carrier": -0.809,
+    "modulated": -1.3356,
+    "suppressed": -0.7522,
+    "single": -0.2679,
+    "vestigial": -0.3841
+  },
+  {
+    "time": 3.95,
+    "message": 0.9511,
+    "carrier": -1.0,
+    "modulated": -1.6657,
+    "suppressed": -0.9511,
+    "single": -0.4755,
+    "vestigial": -0.5897
+  },
+  {
+    "time": 3.96,
+    "message": 0.9686,
+    "carrier": -0.809,
+    "modulated": -1.3575,
+    "suppressed": -0.7836,
+    "single": -0.4649,
+    "vestigial": -0.5414
+  },
+  {
+    "time": 3.97,
+    "message": 0.9823,
+    "carrier": -0.309,
+    "modulated": -0.5215,
+    "suppressed": -0.3035,
+    "single": -0.2409,
+    "vestigial": -0.2559
+  },
+  {
+    "time": 3.98,
+    "message": 0.9921,
+    "carrier": 0.309,
+    "modulated": 0.5236,
+    "suppressed": 0.3066,
+    "single": 0.0937,
+    "vestigial": 0.1448
+  },
+  {
+    "time": 3.99,
+    "message": 0.998,
+    "carrier": 0.809,
+    "modulated": 1.3742,
+    "suppressed": 0.8074,
+    "single": 0.3853,
+    "vestigial": 0.4866
+  },
+  {
+    "time": 4.0,
+    "message": 1.0,
+    "carrier": 1.0,
+    "modulated": 1.7,
+    "suppressed": 1.0,
+    "single": 0.5,
+    "vestigial": 0.62
+  }
+]
