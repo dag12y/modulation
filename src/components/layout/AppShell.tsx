@@ -4,7 +4,7 @@ import { Sidebar } from './Sidebar';
 import { Topbar } from './Topbar';
 import { Dialog } from '@/components/ui/dialog';
 export function AppShell({ children }: { children: ReactNode }) {
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
   const [mobileOpen, setMobileOpen] = useState(false);
   const toggle = () => {
     if (window.matchMedia('(max-width: 900px)').matches) setMobileOpen(true);
@@ -41,8 +41,8 @@ export function AppShell({ children }: { children: ReactNode }) {
         </main>
         <footer className="page-footer">
           <span>
-            AM STUDIO <span className="footer-divider">/</span> BUILT FOR
-            CURIOSITY
+            AM STUDIO V2 <span className="footer-divider">/</span> HYBRID
+            INSTRUMENT STUDIO
           </span>
           <span>
             Learn the theory. See the signal.

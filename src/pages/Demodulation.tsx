@@ -27,13 +27,13 @@ export function DemodulationContent({
             label="Received Signal"
             symbol="s(t)"
             signal={signalKeys[e.id]}
-            color="#9174cc"
+            color="#a3e635"
           />
           <WaveformChart
             label="Recovered Message"
             symbol="m̂(t)"
             signal="message"
-            color="#5577e9"
+            color="#38bdf8"
           />
           <div className="chart-footnote">
             Both waveforms are independent, fixed illustrations.
