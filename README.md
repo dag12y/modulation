@@ -4,10 +4,10 @@ An alternative frontend for the AM Studio amplitude modulation laboratory. Light
 
 ## Versions and Git
 
-- **Version A:** `main`, preserved at `1e1bef0f830327761b3e544b5182aa2faef3aa46` (`Preserve original AM Studio interface`).
-- **Version B:** `design/hybrid-instrument-studio` (this checkout).
+- **Version A:** the original AM Studio interface, preserved at `1e1bef0f830327761b3e544b5182aa2faef3aa46` (`Preserve original AM Studio interface`).
+- **Version B:** the Hybrid Instrument Studio interface, developed on `design/hybrid-instrument-studio` and merged into `main`.
 
-Both versions use the same Vite static build and hash routes. Neither version has been deployed. The two branches remain independent; no branches have been merged or deleted. Commit or otherwise preserve local work before switching branches.
+`main` now uses Version B. Version A remains available in Git history at the commit above, and the design branch is retained as the source of the redesign. Both versions use the same Vite static build and hash routes. Neither version has been deployed.
 
 ## Run locally
 
