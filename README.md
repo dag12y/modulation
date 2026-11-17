@@ -7,7 +7,7 @@ A responsive, frontend-only laboratory for exploring amplitude modulation. This 
 Use Node.js 22.12+ (or a compatible newer LTS) and npm:
 
 ```sh
-npm install
+npm ci
 npm run dev
 ```
 
@@ -22,7 +22,7 @@ npm run format:check  # Check Prettier formatting
 npm run format        # Format source and configuration
 ```
 
-No environment variables or API keys are needed.
+No environment variables or API keys are needed. Commit `package-lock.json` with dependency changes so local and Vercel installations use the same dependency tree. The TypeScript ESLint parser and plugin are pinned together at 8.46.0, which supports TypeScript 5.9.3.
 
 ## Pages
 
