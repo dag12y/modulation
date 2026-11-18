@@ -105,3 +105,68 @@ test('VSB uses a labeled broadband schematic rather than an invented vestige ton
   assert.ok(html.includes('Total bandwidth 1.25 kHz'));
   assert.ok(html.includes('broadband schematic'));
 });
+
+test('conventional AM envelope detector covers under-modulation, 100%, and over-modulation regimes', () => {
+  const under = studio.computeEnvelopeDetection({
+    ...studio.DEFAULT_ENVELOPE_PARAMS,
+    modulationIndex: 0.6,
+  });
+  assert.equal(under.metrics.modulationRegime, 'under');
+  assert.ok(under.metrics.envelopeMinV > 0);
+  assert.equal(under.metrics.phaseReversalFraction, 0);
+  assert.ok(under.metrics.fidelityPct > 80);
+
+  const critical = studio.computeEnvelopeDetection({
+    ...studio.DEFAULT_ENVELOPE_PARAMS,
+    modulationIndex: 1.0,
+    rcTimeConstantMs: 0.12,
+  });
+  assert.equal(critical.metrics.modulationRegime, 'critical');
+  assert.ok(Math.abs(critical.metrics.envelopeMinV) < 1e-6);
+  assert.equal(critical.metrics.phaseReversalFraction, 0);
+
+  const over = studio.computeEnvelopeDetection({
+    ...studio.DEFAULT_ENVELOPE_PARAMS,
+    modulationIndex: 1.5,
+  });
+  assert.equal(over.metrics.modulationRegime, 'over');
+  assert.ok(over.metrics.envelopeMinV < 0);
+  assert.ok(over.metrics.phaseReversalFraction > 0.15);
+  assert.ok(over.metrics.rmseV > under.metrics.rmseV);
+});
+
+test('half-wave rectifier strictly passes s(t) > 0 and blocks s(t) < 0 while RC regime flags extremes', () => {
+  const res = studio.computeEnvelopeDetection(studio.DEFAULT_ENVELOPE_PARAMS);
+  for (const sample of res.samples) {
+    assert.ok(sample.rectified >= 0);
+    if (sample.modulated < 0) {
+      assert.equal(sample.rectified, 0);
+    } else {
+      assert.equal(sample.rectified, sample.modulated);
+    }
+  }
+
+  const tooSmallRc = studio.computeEnvelopeDetection({
+    ...studio.DEFAULT_ENVELOPE_PARAMS,
+    rcTimeConstantMs: 0.02,
+  });
+  assert.equal(tooSmallRc.metrics.rcRegime, 'too-small');
+
+  const tooLargeRc = studio.computeEnvelopeDetection({
+    ...studio.DEFAULT_ENVELOPE_PARAMS,
+    rcTimeConstantMs: 1.2,
+  });
+  assert.equal(tooLargeRc.metrics.rcRegime, 'too-large');
+});
+
+test('demodulation page renders interactive envelope detector plots, controls, and Chapter 2 math', () => {
+  globalThis.window = { location: { hash: '#/demodulation' } };
+  const html = renderToStaticMarkup(createElement(studio.App));
+  assert.ok(html.includes('Half-Wave Rectifier'));
+  assert.ok(html.includes('RC Low-Pass Filter'));
+  assert.ok(html.includes('Modulated AM Signal'));
+  assert.ok(html.includes('Demodulated Output vs. Original Message'));
+  assert.ok(html.includes('Modulation index'));
+  assert.ok(html.includes('Time constant RC'));
+  assert.ok(html.includes('katex-mathml'));
+});

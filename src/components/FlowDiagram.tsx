@@ -7,28 +7,53 @@ import {
 } from 'lucide-react';
 export function FlowDiagram({
   demodulation = false,
+  envelopeDetector = false,
 }: {
   demodulation?: boolean;
+  envelopeDetector?: boolean;
 }) {
   const steps = demodulation
-    ? [
-        { name: 'Received Signal', detail: 'Modulated input', icon: Radio },
-        {
-          name: 'Demodulator',
-          detail: 'Recover the baseband',
-          icon: SlidersHorizontal,
-        },
-        {
-          name: 'Low-Pass Filter',
-          detail: 'Remove high frequencies',
-          icon: AudioLines,
-        },
-        {
-          name: 'Recovered Message',
-          detail: 'Original information',
-          icon: Waves,
-        },
-      ]
+    ? envelopeDetector
+      ? [
+          {
+            name: 'Received AM Signal',
+            detail: 'DSB-LC input · s(t)',
+            icon: Radio,
+          },
+          {
+            name: 'Half-Wave Rectifier',
+            detail: 'Passes s(t) > 0 only',
+            icon: SlidersHorizontal,
+          },
+          {
+            name: 'RC Low-Pass Filter',
+            detail: '1/fc ≪ RC ≪ 1/W',
+            icon: AudioLines,
+          },
+          {
+            name: 'Recovered Message',
+            detail: 'DC-blocked m̂(t) vs m(t)',
+            icon: Waves,
+          },
+        ]
+      : [
+          { name: 'Received Signal', detail: 'Modulated input', icon: Radio },
+          {
+            name: 'Demodulator',
+            detail: 'Recover the baseband',
+            icon: SlidersHorizontal,
+          },
+          {
+            name: 'Low-Pass Filter',
+            detail: 'Remove high frequencies',
+            icon: AudioLines,
+          },
+          {
+            name: 'Recovered Message',
+            detail: 'Original information',
+            icon: Waves,
+          },
+        ]
     : [
         {
           name: 'Message Signal',

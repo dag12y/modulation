@@ -1,14 +1,36 @@
-import { Info, Radio, Waves } from 'lucide-react';
+import { ArrowRight, Info, Radio, Waves } from 'lucide-react';
 import { FlowDiagram } from '@/components/FlowDiagram';
 import { WaveformChart } from '@/components/charts/WaveformChart';
+import { EnvelopeDetectorLab } from '@/components/simulation/EnvelopeDetectorLab';
 import { experiments } from '@/data/experiments';
 import type { ExperimentData } from '@/data/experiments';
 import { signalKeys } from '@/data/mockSignals';
+import { Link } from '@/app/router';
 export function DemodulationContent({
   experiment: e = experiments[0],
 }: {
   experiment?: ExperimentData;
 }) {
+  if (e.id === 'dsb-fc') {
+    return (
+      <>
+        <section className="card demodulation-flow">
+          <div className="card-heading">
+            <div>
+              <h2>Envelope detector receiver chain</h2>
+              <p>
+                Half-wave rectification and RC low-pass smoothing for{' '}
+                {e.fullName} (DSB-LC).
+              </p>
+            </div>
+            <span className="badge">INTERACTIVE LAB</span>
+          </div>
+          <FlowDiagram demodulation envelopeDetector />
+        </section>
+        <EnvelopeDetectorLab />
+      </>
+    );
+  }
   return (
     <>
       <section className="card demodulation-flow">
@@ -46,23 +68,27 @@ export function DemodulationContent({
           <span className="eyebrow">DEMODULATION METHOD</span>
           <h2>{e.method.replace('*', '')}</h2>
           <p>
-            {e.id === 'dsb-fc'
-              ? 'An envelope detector follows the outer shape of the AM signal. A low-pass stage smooths the result to reveal the original message. This works when the carrier is strong and the signal is not overmodulated.'
-              : 'A synchronized local oscillator provides a carrier reference. Mixing and low-pass filtering can then recover the message. Correct frequency and phase alignment are essential.'}
+            A synchronized local oscillator provides a carrier reference. Mixing
+            and low-pass filtering can then recover the message. Correct
+            frequency and phase alignment are essential.
           </p>
           <div className="method-detail">
-            <strong>What to remember</strong>
+            <strong>Why envelope detection cannot be used here</strong>
             <p>
-              {e.id === 'dsb-fc'
-                ? 'Envelope detection is simple, but it depends on a suitable modulation index and adequate carrier amplitude.'
-                : 'Coherent detection improves flexibility but requires a synchronized reference. VSB also needs a suitable filter response for distortion-free recovery.'}
+              Because {e.name} suppresses the carrier, the signal undergoes 180°
+              phase reversals whenever the message crosses zero—requiring
+              coherent (synchronous) detection rather than an envelope detector.
             </p>
           </div>
           <div className="educational-note">
             <Info size={17} />
             <span>
-              Receiver processing and recovered-signal measurements arrive in
-              the simulation phase.
+              Explore live envelope detection and over-modulation phase
+              reversals in the{' '}
+              <Link className="text-link" to="/demodulation">
+                Envelope Detector lab <ArrowRight size={12} />
+              </Link>
+              .
             </span>
           </div>
         </section>
@@ -75,12 +101,14 @@ export function Demodulation() {
     <div className="page-enter">
       <div className="page-heading">
         <div className="eyebrow">
-          <Radio size={14} /> THE RECEIVER SIDE
+          <Radio size={14} /> CHAPTER 2 · CONVENTIONAL AM DEMODULATION
         </div>
         <h1>Bring the message home.</h1>
         <p>
-          See how a modulated signal becomes information again. A static guide
-          to the receiver chain.
+          Simulate conventional AM (DSB-LC) envelope detection end to end:
+          half-wave rectification, RC low-pass smoothing under{' '}
+          <code>1/fc ≪ RC ≪ 1/W</code>, and over-modulation distortion when{' '}
+          <code>μ &gt; 1</code>.
         </p>
       </div>
       <DemodulationContent />
