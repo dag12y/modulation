@@ -21,6 +21,19 @@ export function ExperimentTheory({
         {e.equations.map((eq) => (
           <Equation key={eq} math={eq} block />
         ))}
+        {e.id === 'ssb-sc' && (
+          <>
+            <Equation
+              math={String.raw`\hat{m}(t)=\frac{1}{\pi}\int_{-\infty}^{\infty}\frac{m(\tau)}{t-\tau}\,d\tau`}
+              block
+            />
+            <p className="muted">
+              Minus (−) selects the Upper Sideband (USB) and plus (+) selects
+              the Lower Sideband (LSB). In the frequency domain, the Hilbert
+              transform has unity gain |H(f)| = 1 and a ±π/2 phase shift.
+            </p>
+          </>
+        )}
         {e.id === 'vsb' && (
           <p className="muted">
             * denotes convolution. Hᵥₛᵦ(f) is the asymmetric filter response.
@@ -32,28 +45,52 @@ export function ExperimentTheory({
           <span>{e.efficiency}</span>
         </div>
         <div className="theory-questions">
-          {[
-            {
-              question: 'What happens to the carrier?',
-              answer:
-                e.carrier.replace('*', '') +
-                '. The carrier provides the frequency reference.',
-            },
-            {
-              question: 'Which sidebands are transmitted?',
-              answer:
-                e.sidebands +
-                '. The message information is carried in the sidebands.',
-            },
-            {
-              question: 'How much bandwidth is needed?',
-              answer: `${e.bandwidth} in this example, for a message bandwidth of 1 kHz.`,
-            },
-            {
-              question: 'What makes it different?',
-              answer: e.insights[e.insights.length - 1],
-            },
-          ].map((n) => (
+          {(e.id === 'ssb-sc'
+            ? [
+                {
+                  question: 'Phase discrimination method (Hilbert)',
+                  answer:
+                    'Splits the signal into an in-phase path m(t)cos(2πfct) and a 90° quadrature path m̂(t)sin(2πfct) using a wideband Hilbert phase-shifter, then subtracts (USB) or adds (LSB) them.',
+                },
+                {
+                  question: 'Frequency discrimination method (Filter)',
+                  answer:
+                    'Generates DSB-SC with a product modulator and removes the unwanted sideband using a band-pass filter. Practical filters require a baseband energy gap (fa to fb, such as 300–3400 Hz voice) for the filter transition band.',
+                },
+                {
+                  question: 'Coherent demodulation',
+                  answer:
+                    'Multiplies the received wave s(t) by a synchronized local oscillator A′c cos(2πfct + φ) to form v(t), then passes v(t) through a low-pass filter to recover m(t).',
+                },
+                {
+                  question: 'Efficiency, applications & practical limits',
+                  answer:
+                    'Achieves BW = BWm and 100% power efficiency (used in HF/VHF aviation, marine, amateur radio, and satellite links), but demands strict phase accuracy and can suffer group delay or amplitude distortion from sharp filters.',
+                },
+              ]
+            : [
+                {
+                  question: 'What happens to the carrier?',
+                  answer:
+                    e.carrier.replace('*', '') +
+                    '. The carrier provides the frequency reference.',
+                },
+                {
+                  question: 'Which sidebands are transmitted?',
+                  answer:
+                    e.sidebands +
+                    '. The message information is carried in the sidebands.',
+                },
+                {
+                  question: 'How much bandwidth is needed?',
+                  answer: `${e.bandwidth} in this example, for a message bandwidth of 1 kHz.`,
+                },
+                {
+                  question: 'What makes it different?',
+                  answer: e.insights[e.insights.length - 1],
+                },
+              ]
+          ).map((n) => (
             <div key={n.question}>
               <h3>{n.question}</h3>
               <p>{n.answer}</p>

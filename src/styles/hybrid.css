@@ -2132,6 +2132,312 @@ main {
   }
 }
 
+/* Live SSB Modulation & Coherent Demodulation controls */
+.fixed-status.live-status {
+  color: #b9ec70;
+}
+.fixed-status.live-status i {
+  background: #a3e635;
+  box-shadow: 0 0 8px #a3e63599;
+}
+.ssb-shape-control {
+  margin-top: 10px;
+}
+.ssb-shape-control .segmented {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.ssb-shape-control .segmented button {
+  font-size: 9px;
+  padding: 6px 4px;
+}
+.ssb-control-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+.ssb-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex: 1;
+  min-height: 32px;
+  padding: 0 10px;
+  border-radius: 5px;
+  border: 1px solid #2d3b55;
+  background: #0e1525;
+  color: #c5d4e9;
+  font-size: 10px;
+  font-weight: 500;
+}
+.ssb-action-btn:hover {
+  border-color: #6b8853;
+  color: #e4efdc;
+  background: #172338;
+}
+
+.rx-switcher-btn {
+  text-align: left;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  font: inherit;
+}
+.experiment-switcher button.rx-switcher-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 16px;
+  border-right: 1px solid #e1e6ea;
+  font-size: 12px;
+  font-weight: 500;
+  color: #5b6778;
+}
+.experiment-switcher button.rx-switcher-btn:last-child {
+  border-right: 0;
+}
+.experiment-switcher button.rx-switcher-btn > span {
+  font: 10px monospace;
+  color: #8b96a6;
+}
+.experiment-switcher button.rx-switcher-btn small {
+  margin-left: auto;
+  font-size: 9px;
+  color: #8b96a6;
+  font-weight: 400;
+}
+.experiment-switcher button.rx-switcher-btn.active {
+  background: #eef4e7;
+  color: #273e1c;
+}
+.experiment-switcher button.rx-switcher-btn.active > span,
+.experiment-switcher button.rx-switcher-btn.active small {
+  color: #4f6f3b;
+}
+
+.ssb-rx-grid {
+  align-items: start;
+}
+.ssb-rx-scopes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.rx-scope-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+.rx-scope-header h3 {
+  color: #e2e8f3;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 4px;
+}
+.rx-scope-toggles {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.rx-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 30px;
+  padding: 0 10px;
+  border-radius: 5px;
+  border: 1px solid #2b3851;
+  background: #121a2d;
+  color: #93a5bf;
+  font-size: 10px;
+}
+.rx-toggle.active {
+  border-color: #5f8645;
+  background: #1a2a23;
+  color: #b9ec70;
+}
+.rx-spectrum-card {
+  margin-top: 6px;
+  border-top: 1px solid #202b3e;
+  padding-top: 14px;
+}
+.rx-spectrum-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  font: 9px monospace;
+  color: #8c9bb2;
+  margin-bottom: 8px;
+}
+.rx-spectrum-card .spectrum-plot {
+  height: 195px;
+}
+
+.ssb-rx-controls {
+  gap: 18px;
+}
+.rx-controls-top {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+.rx-controls-top .eyebrow {
+  margin-top: 0;
+}
+.rx-controls-top h2 {
+  margin: 8px 0 0;
+}
+.rx-sublabel {
+  display: block;
+  font-size: 10px;
+  font-weight: 500;
+  color: #5b6778;
+  margin-bottom: 7px;
+}
+.rx-presets {
+  width: 100%;
+}
+.rx-preset-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.rx-preset-buttons button {
+  min-height: 30px;
+  padding: 0 10px;
+  border-radius: 5px;
+  border: 1px solid #dce2e6;
+  background: #f6f8f5;
+  color: #364930;
+  font-size: 10px;
+  font-weight: 500;
+}
+.rx-preset-buttons button:hover {
+  background: #eaf1e4;
+  border-color: #a6be92;
+}
+.rx-tx-quick {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px;
+}
+.rx-segmented-light {
+  display: inline-flex;
+  border: 1px solid #dce2e6;
+  border-radius: 5px;
+  overflow: hidden;
+  background: #f7f8fa;
+}
+.rx-segmented-light button {
+  border: 0;
+  background: transparent;
+  padding: 6px 10px;
+  font-size: 10px;
+  color: #5a6879;
+}
+.rx-segmented-light button.selected {
+  background: #233d2a;
+  color: #fff;
+}
+.rx-sliders-box {
+  width: 100%;
+  border-radius: 7px;
+  padding: 16px 16px 4px;
+  border: 1px solid #263249;
+}
+.rx-dial output {
+  font-size: 15px;
+}
+.rx-metrics-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.rx-metric {
+  border: 1px solid #e2e7e9;
+  background: #f8faf8;
+  border-radius: 6px;
+  padding: 11px 12px;
+}
+.rx-metric span {
+  display: block;
+  font-size: 9px;
+  color: #6b786d;
+  letter-spacing: 0.4px;
+}
+.rx-metric strong {
+  display: block;
+  margin-top: 5px;
+  font: 17px monospace;
+  color: #21341f;
+}
+.rx-diagnostic {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  padding: 13px 14px;
+  border-radius: 6px;
+  font-size: 11px;
+}
+.rx-diagnostic.ok {
+  background: #edf4e5;
+  color: #355028;
+}
+.rx-diagnostic.warn {
+  background: #fef5e7;
+  color: #7c4a0d;
+}
+.rx-diagnostic svg {
+  margin-top: 2px;
+}
+.rx-diagnostic strong {
+  display: block;
+  font-size: 11px;
+  margin-bottom: 3px;
+}
+.rx-diagnostic p {
+  font-size: 11px;
+  line-height: 1.55;
+  color: inherit;
+}
+.rx-equation-card {
+  width: 100%;
+  background: #f4f6f2;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 13px;
+}
+.rx-equation-card .equation-block {
+  margin: 0;
+  background: transparent;
+  border: 0;
+}
+
+@media (max-width: 700px) {
+  .rx-tx-quick {
+    grid-template-columns: 1fr;
+  }
+  .experiment-switcher button.rx-switcher-btn {
+    padding: 12px 6px;
+    font-size: 10px;
+    justify-content: center;
+  }
+  .experiment-switcher button.rx-switcher-btn > span,
+  .experiment-switcher button.rx-switcher-btn small {
+    display: none;
+  }
+}
+
 /* Conventional AM Envelope Detector Lab */
 .envelope-lab {
   display: flex;

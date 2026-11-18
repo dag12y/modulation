@@ -13,6 +13,15 @@ import { waveformData } from '@/data/mockSignals';
 import type { SignalKey } from '@/data/mockSignals';
 import { Button } from '@/components/ui/button';
 import { Dialog } from '@/components/ui/dialog';
+
+export interface WaveVisibleMap {
+  message: boolean;
+  carrier: boolean;
+  modulated: boolean;
+  hilbert?: boolean;
+  envelope?: boolean;
+}
+
 export function WavePlot({
   signal = 'message',
   color = '#38bdf8',
@@ -20,23 +29,41 @@ export function WavePlot({
   tall = false,
   showTimeAxis = true,
   visible = { message: true, carrier: true, modulated: true },
+  data,
+  yDomain = [-2, 2],
+  referenceKey,
+  referenceName = 'Original m(t)',
+  referenceColor = '#94a3b8',
 }: {
-  signal?: SignalKey;
+  signal?: SignalKey | string;
   color?: string;
   overlay?: boolean;
   tall?: boolean;
   showTimeAxis?: boolean;
-  visible?: { message: boolean; carrier: boolean; modulated: boolean };
+  visible?: WaveVisibleMap;
+  data?: ReadonlyArray<Record<string, number>>;
+  yDomain?: [number, number];
+  referenceKey?: string;
+  referenceName?: string;
+  referenceColor?: string;
 }) {
+  const chartData = (data ?? waveformData) as Record<string, number>[];
+  const maxAbs = Math.max(
+    2,
+    Math.ceil(Math.max(Math.abs(yDomain[0]), Math.abs(yDomain[1]))),
+  );
+  const ticks = [-maxAbs, 0, maxAbs];
+  const isLive = Boolean(data);
+
   return (
     <div
       className={`wave-plot ${tall ? 'tall' : ''}`}
       role="img"
-      aria-label={`${overlay ? 'Overlaid message, carrier, and modulated' : signal} static waveform, amplitude in volts over 4 milliseconds`}
+      aria-label={`${overlay ? 'Overlaid message, carrier, and modulated' : signal} ${isLive ? 'simulated' : 'static'} waveform, amplitude in volts over 4 milliseconds`}
     >
       <ResponsiveContainer width="100%" height="100%">
         <LineChart
-          data={waveformData}
+          data={chartData}
           margin={{ top: 8, right: 12, left: -23, bottom: 2 }}
         >
           <CartesianGrid
@@ -56,8 +83,8 @@ export function WavePlot({
             unit=" ms"
           />
           <YAxis
-            domain={[-2, 2]}
-            ticks={[-2, 0, 2]}
+            domain={[-maxAbs, maxAbs]}
+            ticks={ticks}
             tick={{ fontSize: 10, fill: '#8e9db6' }}
             axisLine={false}
             tickLine={false}
@@ -76,16 +103,28 @@ export function WavePlot({
             <>
               <Line
                 hide={!visible.message}
-                name="Message (V)"
+                name="Message m(t) (V)"
                 dataKey="message"
                 stroke="#38bdf8"
                 strokeWidth={1.5}
                 dot={false}
                 isAnimationActive={false}
               />
+              {visible.hilbert !== undefined && (
+                <Line
+                  hide={!visible.hilbert}
+                  name="Hilbert m̂(t) (V)"
+                  dataKey="hilbert"
+                  stroke="#fbbf24"
+                  strokeWidth={1.35}
+                  strokeDasharray="4 3"
+                  dot={false}
+                  isAnimationActive={false}
+                />
+              )}
               <Line
                 hide={!visible.carrier}
-                name="Carrier (V)"
+                name="Carrier c(t) (V)"
                 dataKey="carrier"
                 stroke="#a78bfa"
                 strokeWidth={1}
@@ -93,7 +132,31 @@ export function WavePlot({
                 dot={false}
                 isAnimationActive={false}
               />
+              {visible.envelope !== undefined && (
+                <Line
+                  hide={!visible.envelope}
+                  name="Envelope E(t) (V)"
+                  dataKey="envelope"
+                  stroke="#f472b6"
+                  strokeWidth={1.25}
+                  strokeDasharray="3 3"
+                  dot={false}
+                  isAnimationActive={false}
+                />
+              )}
             </>
+          )}
+          {referenceKey && (
+            <Line
+              name={referenceName}
+              dataKey={referenceKey}
+              stroke={referenceColor}
+              strokeWidth={1.3}
+              strokeDasharray="4 3"
+              opacity={0.75}
+              dot={false}
+              isAnimationActive={false}
+            />
           )}
           <Line
             hide={overlay && !visible.modulated}
@@ -109,18 +172,31 @@ export function WavePlot({
     </div>
   );
 }
+
 export function WaveformChart({
   label,
   symbol,
   signal,
   color,
   overlay = false,
+  data,
+  yDomain,
+  referenceKey,
+  referenceName,
+  referenceColor,
+  onDownload,
 }: {
   label: string;
   symbol: string;
-  signal: SignalKey;
+  signal: SignalKey | string;
   color: string;
   overlay?: boolean;
+  data?: ReadonlyArray<Record<string, number>>;
+  yDomain?: [number, number];
+  referenceKey?: string;
+  referenceName?: string;
+  referenceColor?: string;
+  onDownload?: () => void;
 }) {
   const [open, setOpen] = useState(false);
   return (
@@ -144,23 +220,53 @@ export function WaveformChart({
           <Button
             variant="ghost"
             size="icon"
-            disabled
-            aria-label={`Download ${label} coming soon`}
-            title="Download coming soon"
+            disabled={!onDownload}
+            onClick={onDownload}
+            aria-label={
+              onDownload
+                ? `Download ${label} CSV`
+                : `Download ${label} coming soon`
+            }
+            title={
+              onDownload ? `Download ${label} CSV` : 'Download coming soon'
+            }
           >
             <Download size={12} />
           </Button>
         </div>
       </div>
-      <WavePlot signal={signal} color={color} overlay={overlay} />
+      <WavePlot
+        signal={signal}
+        color={color}
+        overlay={overlay}
+        data={data}
+        yDomain={yDomain}
+        referenceKey={referenceKey}
+        referenceName={referenceName}
+        referenceColor={referenceColor}
+      />
       <Dialog
         open={open}
         onOpenChange={setOpen}
         title={label}
-        description="Fixed demonstration data · Amplitude (V) vs. Time (ms)"
+        description={
+          data
+            ? 'Live simulated waveform · Amplitude (V) vs. Time (ms)'
+            : 'Fixed demonstration data · Amplitude (V) vs. Time (ms)'
+        }
         className="scope-dialog instrument-surface"
       >
-        <WavePlot signal={signal} color={color} overlay={overlay} tall />
+        <WavePlot
+          signal={signal}
+          color={color}
+          overlay={overlay}
+          data={data}
+          yDomain={yDomain}
+          referenceKey={referenceKey}
+          referenceName={referenceName}
+          referenceColor={referenceColor}
+          tall
+        />
       </Dialog>
     </section>
   );

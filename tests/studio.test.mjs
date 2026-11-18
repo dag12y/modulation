@@ -50,7 +50,14 @@ for (const [path, content] of routes) {
     assert.ok(html.includes(content), `${path} must render its own content`);
     assert.ok(html.includes('aria-label="Main navigation"'));
     assert.ok(html.includes('id="main-content"'));
-    if (path.startsWith('/experiments/')) {
+    if (path === '/experiments/ssb-sc') {
+      assert.ok(html.includes('LIVE SSB SIMULATION'));
+      assert.ok(html.includes('Phase discrimination (Hilbert)'));
+      assert.ok(
+        html.includes('katex-mathml'),
+        'equations include accessible MathML',
+      );
+    } else if (path.startsWith('/experiments/')) {
       assert.ok(html.includes('FIXED REFERENCE DATA'));
       assert.ok(html.includes('Sliders change readouts only.'));
       assert.ok(
@@ -169,4 +176,117 @@ test('demodulation page renders interactive envelope detector plots, controls, a
   assert.ok(html.includes('Modulation index'));
   assert.ok(html.includes('Time constant RC'));
   assert.ok(html.includes('katex-mathml'));
+});
+
+test('SSB phase-shift modulator suppresses carrier and unwanted sideband for USB and LSB', () => {
+  const usb = studio.simulateSsb({
+    ...studio.DEFAULT_SSB_PARAMS,
+    fmKHz: 1.5,
+    fcKHz: 10,
+    AmV: 1.2,
+    AcV: 1.0,
+    sideband: 'USB',
+  });
+  const usbCarrier =
+    usb.spectrum.find((p) => p.frequency === 10)?.amplitude ?? 0;
+  const usbLower =
+    usb.spectrum.find((p) => p.frequency === 8.5)?.amplitude ?? 0;
+  const usbUpper =
+    usb.spectrum.find((p) => p.frequency === 11.5)?.amplitude ?? 0;
+  assert.ok(usbUpper > 0.55, `Expected USB peak near 0.6 V, got ${usbUpper}`);
+  assert.ok(
+    usbCarrier < 0.01,
+    `Carrier should be suppressed, got ${usbCarrier}`,
+  );
+  assert.ok(
+    usbLower < 0.01,
+    `LSB should be suppressed in USB mode, got ${usbLower}`,
+  );
+  assert.ok(usb.metrics.sidebandSuppressionDb > 40);
+
+  const lsb = studio.simulateSsb({
+    ...studio.DEFAULT_SSB_PARAMS,
+    fmKHz: 1.5,
+    fcKHz: 10,
+    AmV: 1.2,
+    AcV: 1.0,
+    sideband: 'LSB',
+  });
+  const lsbLower =
+    lsb.spectrum.find((p) => p.frequency === 8.5)?.amplitude ?? 0;
+  const lsbUpper =
+    lsb.spectrum.find((p) => p.frequency === 11.5)?.amplitude ?? 0;
+  assert.ok(lsbLower > 0.55, `Expected LSB peak near 0.6 V, got ${lsbLower}`);
+  assert.ok(
+    lsbUpper < 0.01,
+    `USB should be suppressed in LSB mode, got ${lsbUpper}`,
+  );
+});
+
+test('SSB coherent demodulator recovers message accurately under ideal lock and renders receiver workspace', () => {
+  const ssbExp = studio.experiments.find((e) => e.id === 'ssb-sc');
+  const rxHtml = renderToStaticMarkup(
+    createElement(studio.DemodulationContent, { experiment: ssbExp }),
+  );
+  assert.ok(rxHtml.includes('LIVE COHERENT RECEIVER'));
+  assert.ok(rxHtml.includes('LO frequency offset'));
+
+  const ideal = studio.simulateSsb({
+    ...studio.DEFAULT_SSB_PARAMS,
+    shape: 'harmonic',
+    sideband: 'LSB',
+    phaseErrorDeg: 0,
+    freqOffsetHz: 0,
+    lpfCutoffKHz: 4.0,
+  });
+  assert.ok(
+    ideal.metrics.rmseV < 0.02,
+    `Ideal coherent RMSE should be < 0.02 V, got ${ideal.metrics.rmseV}`,
+  );
+  assert.ok(
+    ideal.metrics.correlation > 0.999,
+    `Ideal coherent correlation should be > 0.999, got ${ideal.metrics.correlation}`,
+  );
+  assert.ok(ideal.metrics.lpfRejectionDb > 50);
+
+  const phaseErr = studio.simulateSsb({
+    ...studio.DEFAULT_SSB_PARAMS,
+    shape: 'tone',
+    phaseErrorDeg: 90,
+    freqOffsetHz: 0,
+    lpfCutoffKHz: 4.0,
+  });
+  assert.ok(
+    Math.abs(phaseErr.metrics.correlation) < 0.05,
+    `90 deg phase error should rotate cosine to orthogonal sine, got r=${phaseErr.metrics.correlation}`,
+  );
+
+  const freqDrift = studio.simulateSsb({
+    ...studio.DEFAULT_SSB_PARAMS,
+    shape: 'tone',
+    phaseErrorDeg: 0,
+    freqOffsetHz: 200,
+    lpfCutoffKHz: 4.0,
+  });
+  assert.ok(
+    freqDrift.metrics.rmseV > 0.4,
+    `200 Hz LO drift should raise RMSE substantially, got ${freqDrift.metrics.rmseV}`,
+  );
+
+  const highLpf = studio.simulateSsb({
+    ...studio.DEFAULT_SSB_PARAMS,
+    fcKHz: 10,
+    lpfCutoffKHz: 24,
+  });
+  assert.ok(
+    highLpf.metrics.lpfRejectionDb < 15,
+    `High LPF cutoff should leak 2fc energy, got rejection=${highLpf.metrics.lpfRejectionDb}`,
+  );
+
+  const csv = studio.buildSsbCsv(ideal.samples, studio.DEFAULT_SSB_PARAMS);
+  assert.ok(
+    csv.includes(
+      'time_ms,message_V,hilbert_V,carrier_V,ssb_V,envelope_V,mixer_V,recovered_V',
+    ),
+  );
 });

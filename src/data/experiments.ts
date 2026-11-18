@@ -74,14 +74,16 @@ export const experiments: ExperimentData[] = [
     equations: [
       String.raw`s_{\mathrm{USB}}(t)=\frac{A_c A_m}{2}\cos\left[2\pi(f_c+f_m)t\right]`,
       String.raw`s_{\mathrm{LSB}}(t)=\frac{A_c A_m}{2}\cos\left[2\pi(f_c-f_m)t\right]`,
+      String.raw`s_{\mathrm{SSB}}(t)=\frac{A_c}{2}\left[m(t)\cos(2\pi f_c t)\mp \hat{m}(t)\sin(2\pi f_c t)\right]`,
     ],
     method: 'Coherent detection',
-    efficiency: 'Single sideband uses less bandwidth and avoids carrier power.',
+    efficiency:
+      'Single sideband uses half the bandwidth and avoids carrier power.',
     insights: [
       'Transmits one sideband, with no carrier.',
       'Needs only the message bandwidth.',
-      'USB and LSB carry the same message information.',
-      'Requires accurate coherent detection.',
+      'Phase-shift modulation uses m(t) and its Hilbert transform m̂(t).',
+      'Requires accurate coherent frequency and phase recovery.',
     ],
   },
   {
